@@ -1,0 +1,13 @@
+@import "normalize";
+@import "fonts-style";
+
+#__next {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+
+  overflow: hidden;
+}

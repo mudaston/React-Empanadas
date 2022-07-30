@@ -1,0 +1,51 @@
+@import "../../../styles/colors.module";
+@import "../../../styles/variables.module";
+
+.dropdown {
+  position: absolute;
+
+  &_align_left {
+    left: 0;
+  }
+
+  &_align_right {
+    right: 0;
+  }
+
+  &_align_center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  // .dropdown__list
+  &__list {
+    margin: 0;
+    padding: 13px 0;
+
+    list-style-type: none;
+    box-shadow: 0 5px 15px $grey-color;
+    border-radius: 10px;
+  }
+
+  // .dropdown__item
+  &__item {
+    width: 100%;
+
+    padding: 10px 15px;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+    transition: background-color $animation-time ease, color $animation-time ease;
+
+    &_active {
+      color: $main-color;
+      font-weight: 700;
+    }
+
+    &_hover:hover {
+      background-color: $main-color--hover;
+    }
+  }
+}

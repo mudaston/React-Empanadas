@@ -1,0 +1,16 @@
+$main-color: #FE5F1E;
+$main-color--hover: #FE5F1E0D;
+$options-background: #F3F3F3;
+$grey-color: #e5e5e5;
+
+$text-color--primary: #000;
+$text-color--secondary: #fff;
+
+:export {
+  mainColor: $main-color;
+  mainColorHoer: $main-color--hover;
+  textColorPrimary: $text-color--primary;
+  textColorSecondary: $text-color--secondary;
+  optionsBackground: $options-background;
+  greyColor: $grey-color;
+}

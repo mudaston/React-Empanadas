@@ -1,0 +1,20 @@
+@import "../../../styles/colors.module";
+@import "../../../styles/mixins/underline-dotted";
+
+.switcher {
+  position: relative;
+
+  &__current_language {
+    border: none;
+
+    background-color: transparent;
+
+    color: $main-color;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    @include underline-dotted(2px);
+  }
+}
