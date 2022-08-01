@@ -1,10 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit'
+import { createWrapper } from 'next-redux-wrapper'
 
-export const store = configureStore({
-  reducer: {},
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
-  devTools: process.env.NODE_ENV !== 'production',
-})
+import { filtersApi } from '../../features/filters/Sort/sortService'
 
-export type AppDispatch = typeof store.dispatch
-export type RootState = ReturnType<typeof store.getState>
+export const makeStore = () =>
+  configureStore({
+    reducer: {
+      [filtersApi.reducerPath]: filtersApi.reducer,
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(filtersApi.middleware),
+    devTools: process.env.NODE_ENV !== 'production',
+  })
+
+export type AppStore = ReturnType<typeof makeStore>
+export type RootState = ReturnType<AppStore['getState']>
+export type AppDispatch = AppStore['dispatch']
+
+export const wrapper = createWrapper<AppStore>(makeStore, { debug: false })

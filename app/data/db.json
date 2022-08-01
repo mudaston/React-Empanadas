@@ -1,23 +1,32 @@
 {
-  "ru": {
-    "filters": [
-      "Популярности",
-      "Цене",
-      "Алфавиту"
-    ]
-  },
-  "en": {
-    "filters": [
-      "Popularity",
-      "Price",
-      "Alphabet"
-    ]
-  },
-  "uk": {
-    "filters": [
-      "Популярності",
-      "Ціні",
-      "Алфавіту"
-    ]
-  }
+  "ru": [
+    {
+      "name": "filters",
+      "filters": [
+        "Популярности",
+        "Цене",
+        "Алфавиту"
+      ]
+    }
+  ],
+  "en": [
+    {
+      "name": "filters",
+      "filters": [
+        "Popularity",
+        "Price",
+        "Alphabet"
+      ]
+    }
+  ],
+  "uk": [
+    {
+      "name": "filters",
+      "filters": [
+        "Популярності",
+        "Ціні",
+        "Алфавіту"
+      ]
+    }
+  ]
 }

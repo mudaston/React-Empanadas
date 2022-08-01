@@ -8,6 +8,10 @@ const nextConfig = {
   images: {
     domains: ['github.com', 'localhost'],
   },
+  env: {
+    API_URL: 'http://localhost:3000/api',
+    CURRENT_LOCALE: i18n.defaultLocale,
+  },
 }
 
 module.exports = nextConfig
