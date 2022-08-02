@@ -2,6 +2,10 @@ import { FC } from 'react'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 
+import { Header } from '../index'
+
+import style from './MainContainer.module.scss'
+
 interface OwnProps {
   children: JSX.Element[] | JSX.Element
   keywords?: string[]
@@ -10,7 +14,7 @@ interface OwnProps {
 type Props = OwnProps
 
 const MainContainer: FC<Props> = ({ children }) => {
-  const { t } = useTranslation(['head'])
+  const { t } = useTranslation(['head', 'home'])
 
   return (
     <>
@@ -24,7 +28,8 @@ const MainContainer: FC<Props> = ({ children }) => {
         <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
         <title>Altanka</title>
       </Head>
-      {children}
+      <Header subtitle={t('home:subheader')} />
+      <main className={style.pages}>{children}</main>
     </>
   )
 }

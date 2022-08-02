@@ -1,0 +1,30 @@
+@import "../../../styles/colors.module";
+
+.order-status {
+  display: flex;
+  gap: 20px;
+
+  padding: 10px 15px;
+  border-radius: 30px;
+
+  background-color: $main-color;
+
+  color: $text-color--secondary;
+  font-weight: 700;
+
+  // .order-status__sum
+  &__sum {
+    padding: 5px 5px;
+    cursor: pointer;
+  }
+
+  // .order-status__shopping-cart
+  &__shopping-cart {
+    display: flex;
+    gap: 5px;
+
+    padding: 5px 5px;
+
+    cursor: pointer;
+  }
+}

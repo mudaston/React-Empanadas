@@ -1,1 +1,1 @@
-export type { IGetFiltersResponse, IGetFiltersError } from './filters/sort'
+export type { IGetFiltersResponse } from './filters/sort'

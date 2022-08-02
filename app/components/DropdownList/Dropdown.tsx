@@ -1,5 +1,4 @@
 import { Children, FC, memo, MouseEvent, useState } from 'react'
-
 import classNames from 'classnames'
 
 import style from './Dropdown.module.scss'
@@ -16,6 +15,7 @@ interface OwnProps {
   textTransform?: textTransformTypes
   topOffset?: string
   hoverEffect?: hoverEffect
+  active: boolean
 }
 
 type Props = OwnProps
@@ -28,6 +28,7 @@ const Dropdown: FC<Props> = ({
   align = 'left',
   topOffset = '20px',
   hoverEffect = false,
+  active = false,
 }) => {
   const [currentActiveItem, setCurrentActiveItem] = useState(activeItem)
 
@@ -49,6 +50,7 @@ const Dropdown: FC<Props> = ({
     <div
       style={{
         top: topOffset,
+        display: active ? 'block' : 'none',
       }}
       className={classNames(style.dropdown, {
         [style.dropdown_align_left]: align === 'left',

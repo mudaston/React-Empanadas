@@ -11,3 +11,13 @@
 
   overflow: hidden;
 }
+
+.container {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+// styles for tooltips
+.type-dark, .type-light, .type-custom {
+  opacity: 1 !important;
+}

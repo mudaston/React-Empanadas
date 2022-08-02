@@ -11,8 +11,6 @@ export default async function handler(
     query: { locale },
   } = req
 
-  console.log(locale)
-
   const { data } = await axiosWorker.get(`${locale}`, {
     params: {
       name: 'filters',

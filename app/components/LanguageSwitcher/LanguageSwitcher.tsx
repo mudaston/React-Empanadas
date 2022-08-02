@@ -14,9 +14,9 @@ const LanguageSwitcher: FC<Props> = () => {
   const { pathname, asPath, query, locales, locale, push } = useRouter()
   const [active, setActive] = useState(false)
 
-  const handleOnItemChoose = useCallback((item: string | null) => {
+  const handleOnItemChoose = useCallback(async (item: string | null) => {
     // @ts-ignore
-    push({ pathname, query }, asPath, { locale: item })
+    await push({ pathname, query }, asPath, { locale: item })
   }, [])
 
   const handleOnShowStateChange = () => {
@@ -31,16 +31,16 @@ const LanguageSwitcher: FC<Props> = () => {
         <button onClick={handleOnShowStateChange} className={styles.switcher__current_language}>
           {locale}
         </button>
-        {active && (
-          <Dropdown
-            align={'center'}
-            textTransform={'uppercase'}
-            callback={handleOnItemChoose}
-            hoverEffect
-          >
-            {availableLocales}
-          </Dropdown>
-        )}
+        <Dropdown
+          active={active}
+          align={'center'}
+          textTransform={'uppercase'}
+          callback={handleOnItemChoose}
+          hoverEffect
+          topOffset={'30px'}
+        >
+          {availableLocales}
+        </Dropdown>
       </div>
     </OutsideClickHandler>
   )

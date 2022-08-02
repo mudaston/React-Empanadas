@@ -1,0 +1,69 @@
+import { FC, useEffect, useState } from 'react'
+import { useTranslation } from 'next-i18next'
+import ReactTooltip from 'react-tooltip'
+
+import style from './OrderStatus.module.scss'
+import colors from '../../../styles/colors.module.scss'
+
+interface OwnProps {}
+
+type Props = OwnProps
+
+const OrderStatus: FC<Props> = (props) => {
+  const { t } = useTranslation(['common'])
+  const [showToolTip, setShowToolTip] = useState(false)
+
+  useEffect(() => {
+    setShowToolTip(true)
+
+    return () => {
+      setShowToolTip(false)
+    }
+  }, [])
+
+  return (
+    <div className={style['order-status']}>
+      <span className={style['order-status__sum']} data-tip='Сумма заказа' data-for='order-sum'>
+        520 {t('common:currency')}
+      </span>
+
+      <div
+        className={`${style['order-status__shopping-cart']}`}
+        data-tip='Кол-во товаров в заказе'
+        data-for='shopping-cart'
+      >
+        <span className={'icon-shopping-cart'} />3
+      </div>
+      {showToolTip && (
+        <>
+          <ReactTooltip
+            id='order-sum'
+            border={true}
+            borderColor={colors.mainColor}
+            textColor={colors.mainColor}
+            type={'light'}
+            effect={'solid'}
+            place={'bottom'}
+            delayShow={200}
+            delayHide={200}
+            clickable={true}
+          />
+          <ReactTooltip
+            id='shopping-cart'
+            border={true}
+            borderColor={colors.mainColor}
+            textColor={colors.mainColor}
+            type={'light'}
+            effect={'solid'}
+            place={'bottom'}
+            delayShow={200}
+            delayHide={200}
+            clickable={true}
+          />
+        </>
+      )}
+    </div>
+  )
+}
+
+export default OrderStatus

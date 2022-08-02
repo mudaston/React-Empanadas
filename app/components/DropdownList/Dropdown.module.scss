@@ -4,6 +4,8 @@
 .dropdown {
   position: absolute;
 
+  background-color: $containers-color;
+
   &_align_left {
     left: 0;
   }

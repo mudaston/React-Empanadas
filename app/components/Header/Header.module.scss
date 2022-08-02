@@ -1,0 +1,64 @@
+@import "../../../styles/colors.module";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding-top: 2.8125rem;
+  padding-bottom: 2.8125rem;
+  border-bottom: 1px solid $grey-color;
+
+  background-color: $containers-color;
+
+  // .header__left-side
+  &__left-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  // .header__logo
+  &__logo {
+    max-width: 2.375rem;
+    max-height: 2.375rem;
+  }
+
+  // .header__text
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  // .header__cafe-name
+  &__cafe-name {
+    color: $text-color--primary;
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+
+  // .header__subtitle
+  &__subtitle {
+    color: $text-grey-color;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  // .header__right-side
+  &__right-side {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+@import "media";

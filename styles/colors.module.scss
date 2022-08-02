@@ -2,15 +2,18 @@ $main-color: #FE5F1E;
 $main-color--hover: #FE5F1E0D;
 $options-background: #F3F3F3;
 $grey-color: #e5e5e5;
+$text-grey-color: #7B7B7B;
+$containers-color: #fff;
 
 $text-color--primary: #000;
 $text-color--secondary: #fff;
 
 :export {
   mainColor: $main-color;
-  mainColorHoer: $main-color--hover;
+  mainColorHover: $main-color--hover;
   textColorPrimary: $text-color--primary;
   textColorSecondary: $text-color--secondary;
   optionsBackground: $options-background;
   greyColor: $grey-color;
+  textGreyColor: $text-grey-color;
 }
