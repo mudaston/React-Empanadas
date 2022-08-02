@@ -14,9 +14,10 @@ const LanguageSwitcher: FC<Props> = () => {
   const { pathname, asPath, query, locales, locale, push } = useRouter()
   const [active, setActive] = useState(false)
 
-  const handleOnItemChoose = useCallback(async (item: string | null) => {
+  const handleOnItemChoose = useCallback((item: string | null) => {
+    handleOnShowStateChange()
     // @ts-ignore
-    await push({ pathname, query }, asPath, { locale: item })
+    push({ pathname, query }, asPath, { locale: item })
   }, [])
 
   const handleOnShowStateChange = () => {
