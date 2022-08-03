@@ -6,7 +6,7 @@ const nextConfig = {
   swcMinify: true,
   i18n,
   images: {
-    domains: ['github.com', 'localhost'],
+    domains: ['localhost'],
   },
   env: {
     API_URL: 'http://localhost:3000/api',

@@ -1,4 +1,4 @@
 export enum routerPaths {
   home = '/',
-  order = 'order',
+  order = '/order',
 }

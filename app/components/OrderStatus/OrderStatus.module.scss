@@ -2,7 +2,8 @@
 
 .order-status {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
 
   padding: 10px 15px;
   border-radius: 30px;
@@ -16,6 +17,14 @@
   &__sum {
     padding: 5px 5px;
     cursor: pointer;
+    white-space: nowrap;
+  }
+
+  // .order-status__divider
+  &__divider {
+    width: 1px;
+    height: 25px;
+    background-color: rgba($grey-color, .3);
   }
 
   // .order-status__shopping-cart

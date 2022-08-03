@@ -1,5 +1,5 @@
 export { default as LanguageSwitcher } from './LanguageSwitcher/LanguageSwitcher'
-export { default as MainContainer } from './MainContainer/MainContainer'
+export { default as Layout } from '../../pages/Layout'
 export { default as Dropdown } from './DropdownList/Dropdown'
 export { default as Header } from './Header/Header'
 export { default as OrderStatus } from './OrderStatus/OrderStatus'

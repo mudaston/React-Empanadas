@@ -1,8 +1,8 @@
-import { FC } from 'react'
+import { NextPage } from 'next'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 
-import { Header } from '../index'
+import { Header } from '../app/components'
 
 interface OwnProps {
   children: JSX.Element[] | JSX.Element
@@ -10,8 +10,8 @@ interface OwnProps {
 
 type Props = OwnProps
 
-const Layout: FC<Props> = ({ children }) => {
-  const { t } = useTranslation(['head', 'home'])
+const Layout: NextPage<Props> = ({ children }) => {
+  const { t } = useTranslation(['head'])
 
   return (
     <>
@@ -25,8 +25,8 @@ const Layout: FC<Props> = ({ children }) => {
         <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
         <title>Altanka</title>
       </Head>
-      <Header subtitle={t('home:subheader')} />
-      <main style={{ paddingTop: '10rem' }}>{children}</main>
+      <Header />
+      <main>{children}</main>
     </>
   )
 }

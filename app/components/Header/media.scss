@@ -1,4 +1,36 @@
 @media screen and (max-width: 768px) {
   .header {
+
+
+
+    // .header__left-side
+    &__left-side {
+
+    }
+
+    // .header__logo
+    &__logo {
+      display: none;
+    }
+
+    // .header__text
+    &__text {
+
+    }
+
+    // .header__cafe-name
+    &__cafe-name {
+
+    }
+
+    // .header__subtitle
+    &__subtitle {
+
+    }
+
+    // .header__right-side
+    &__right-side {
+
+    }
   }
 }

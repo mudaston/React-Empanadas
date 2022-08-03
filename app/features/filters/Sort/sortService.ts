@@ -22,7 +22,7 @@ export const filtersApi = createApi({
   },
   endpoints: (builder) => ({
     getFilters: builder.query<string[], IGetFilters>({
-      query: ({ locale }: any) => ({
+      query: ({ locale }: IGetFilters) => ({
         url: `/${apiPaths.getSortFilters}`,
         params: {
           locale,

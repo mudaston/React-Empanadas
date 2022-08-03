@@ -10,7 +10,7 @@ interface OwnProps {}
 type Props = OwnProps
 
 const OrderStatus: FC<Props> = (props) => {
-  const { t } = useTranslation(['common'])
+  const { t } = useTranslation(['currencies', 'order-status'])
   const [showToolTip, setShowToolTip] = useState(false)
 
   useEffect(() => {
@@ -23,13 +23,17 @@ const OrderStatus: FC<Props> = (props) => {
 
   return (
     <div className={style['order-status']}>
-      <span className={style['order-status__sum']} data-tip='Сумма заказа' data-for='order-sum'>
-        520 {t('common:currency')}
+      <span
+        className={style['order-status__sum']}
+        data-tip={t('order-status:order_price')}
+        data-for='order-sum'
+      >
+        520 {t('currencies:currency')}
       </span>
-
+      <div className={style['order-status__divider']} />
       <div
         className={`${style['order-status__shopping-cart']}`}
-        data-tip='Кол-во товаров в заказе'
+        data-tip={t('order-status:number_of_items_in_order')}
         data-for='shopping-cart'
       >
         <span className={'icon-shopping-cart'} />3

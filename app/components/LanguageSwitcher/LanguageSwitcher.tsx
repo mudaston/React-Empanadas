@@ -11,13 +11,14 @@ interface OwnProps {}
 type Props = OwnProps
 
 const LanguageSwitcher: FC<Props> = () => {
-  const { pathname, asPath, query, locales, locale, push } = useRouter()
+  const { pathname, asPath, query, locales, locale, push, defaultLocale } = useRouter()
   const [active, setActive] = useState(false)
 
   const handleOnItemChoose = useCallback((item: string | null) => {
+    const chosenLocale = item ?? defaultLocale
+
     handleOnShowStateChange()
-    // @ts-ignore
-    push({ pathname, query }, asPath, { locale: item })
+    push({ pathname, query }, asPath, { locale: chosenLocale })
   }, [])
 
   const handleOnShowStateChange = () => {
