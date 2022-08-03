@@ -1,7 +1,30 @@
 @media screen and (max-width: 768px) {
   .header {
 
+    height: auto;
 
+    // .header__wrapper
+    &__wrapper {
+      flex-direction: column;
+      justify-content: flex-start;
+
+      height: 100vh;
+
+      top: -300%;
+
+      padding-top: 100px;
+      padding-bottom: 20px;
+
+      border-bottom: none;
+
+      visibility: hidden;
+
+      // .header__wrapper_active
+      &_active {
+        visibility: visible;
+        top: 0;
+      }
+    }
 
     // .header__left-side
     &__left-side {
@@ -15,7 +38,7 @@
 
     // .header__text
     &__text {
-
+      text-align: center;
     }
 
     // .header__cafe-name
@@ -31,6 +54,37 @@
     // .header__right-side
     &__right-side {
 
+    }
+  }
+
+
+  .header-mobile {
+    display: flex;
+
+    // .header-mobile__logo
+    &__logo {
+
+    }
+
+    // .header-mobile__burger
+    &__burger {
+    }
+
+    // .header-mobile__burger-line
+    &__burger-line {
+
+
+      // .header-mobile__burger-line_first
+      &_first {
+      }
+
+      // .header-mobile__burger-line_second
+      &_second {
+      }
+
+      // .header-mobile__burger-line_third
+      &_third {
+      }
     }
   }
 }

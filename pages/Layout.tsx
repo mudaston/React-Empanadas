@@ -26,7 +26,7 @@ const Layout: NextPage<Props> = ({ children }) => {
         <title>Altanka</title>
       </Head>
       <Header />
-      <main>{children}</main>
+      {children}
     </>
   )
 }
