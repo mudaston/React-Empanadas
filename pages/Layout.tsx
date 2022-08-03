@@ -4,16 +4,13 @@ import { useTranslation } from 'next-i18next'
 
 import { Header } from '../index'
 
-import style from './MainContainer.module.scss'
-
 interface OwnProps {
   children: JSX.Element[] | JSX.Element
-  keywords?: string[]
 }
 
 type Props = OwnProps
 
-const MainContainer: FC<Props> = ({ children }) => {
+const Layout: FC<Props> = ({ children }) => {
   const { t } = useTranslation(['head', 'home'])
 
   return (
@@ -29,9 +26,9 @@ const MainContainer: FC<Props> = ({ children }) => {
         <title>Altanka</title>
       </Head>
       <Header subtitle={t('home:subheader')} />
-      <main className={style.pages}>{children}</main>
+      <main style={{ paddingTop: '10rem' }}>{children}</main>
     </>
   )
 }
 
-export default MainContainer
+export default Layout
