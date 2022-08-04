@@ -2,14 +2,14 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
 import { HYDRATE } from 'next-redux-wrapper'
 
 import { apiPaths } from '../../../helpers/api-paths'
-import { IGetFiltersResponse, LocaleType } from '../../../../interfaces'
+import { IGetCategoriesResponse, LocaleType } from '../../../../interfaces'
 
-interface IGetFilters {
+interface IGetCategories {
   locale: LocaleType
 }
 
-export const filtersApi = createApi({
-  reducerPath: 'testApi',
+export const categoriesApi = createApi({
+  reducerPath: 'categoriesApi',
   keepUnusedDataFor: 3600,
   refetchOnReconnect: true,
   baseQuery: fetchBaseQuery({ baseUrl: process.env.API_URL }),
@@ -19,14 +19,14 @@ export const filtersApi = createApi({
     }
   },
   endpoints: (builder) => ({
-    getFilters: builder.query<string[], IGetFilters>({
-      query: ({ locale }: IGetFilters) => ({
-        url: `/${apiPaths.getSortFilters}`,
+    getCategories: builder.query<string[], IGetCategories>({
+      query: ({ locale }: IGetCategories) => ({
+        url: `/${apiPaths.getCategoriesFilters}`,
         params: {
           locale,
         },
       }),
-      transformResponse(response: IGetFiltersResponse) {
+      transformResponse(response: IGetCategoriesResponse) {
         return response.data
       },
     }),
@@ -34,7 +34,7 @@ export const filtersApi = createApi({
 })
 
 export const {
-  useGetFiltersQuery,
+  useGetCategoriesQuery,
   util: { getRunningOperationPromises },
-} = filtersApi
-export const { getFilters } = filtersApi.endpoints
+} = categoriesApi
+export const { getCategories } = categoriesApi.endpoints

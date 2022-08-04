@@ -1,0 +1,44 @@
+@import "../../../../styles/colors.module";
+
+.wrapper {
+  position: relative;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+
+  min-width: 260px;
+
+  padding: 15px 0 15px 15px;
+
+  font-size: 1rem;
+
+  user-select: none;
+  cursor: pointer;
+
+  // .sort__icon
+  &__icon {
+    margin-right: 5px;
+
+    transform: rotate(180deg);
+
+    transition: .3s ease;
+
+    // .sort__icon_active
+    &_active {
+      transform: rotate(0deg);
+    }
+  }
+
+  // .sort__text
+  &__text {
+    font-weight: 700;
+  }
+
+  // .sort__current-option
+  &__current-option {
+    color: $main-color;
+    text-transform: lowercase;
+  }
+}
