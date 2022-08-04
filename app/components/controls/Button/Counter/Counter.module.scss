@@ -1,0 +1,22 @@
+@import "../../../../../styles/colors.module";
+
+.counter {
+  position: relative;
+
+  padding: 0.625rem;
+  border-radius: 100%;
+
+  background-color: $main-color;
+  color: $text-color--secondary;
+  font-size: 13px;
+  line-height: 9px;
+
+  // .counter__number
+
+  &__number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

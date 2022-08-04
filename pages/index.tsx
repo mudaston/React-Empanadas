@@ -10,6 +10,7 @@ import {
   LocaleType,
   useGetFiltersQuery,
 } from '../app/features/filters/Sort/sortService'
+import ChooseFilterButton from '../app/components/controls/Buttons/ChooseFilterButton/ChooseFilterButton'
 
 const Home: NextPage = (props) => {
   const { locale } = useRouter()
@@ -18,7 +19,10 @@ const Home: NextPage = (props) => {
 
   return (
     <>
-      <h1>Hello world!</h1>
+      <ChooseFilterButton onClick={() => console.log('Clicked!')} isActive>
+        Все
+      </ChooseFilterButton>
+      <ChooseFilterButton onClick={() => console.log('Clicked!')}>Мясные</ChooseFilterButton>
     </>
   )
 }

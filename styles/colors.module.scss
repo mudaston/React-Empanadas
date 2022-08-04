@@ -4,6 +4,7 @@ $options-background: #F3F3F3;
 $grey-color: #e5e5e5;
 $text-grey-color: #7B7B7B;
 $containers-color: #fff;
+$black-color: #282828;
 
 $text-color--primary: #000;
 $text-color--secondary: #fff;
@@ -16,4 +17,5 @@ $text-color--secondary: #fff;
   optionsBackground: $options-background;
   greyColor: $grey-color;
   textGreyColor: $text-grey-color;
+  blackColor: $black-color;
 }
