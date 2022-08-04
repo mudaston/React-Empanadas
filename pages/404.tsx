@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next'
 
-import { addServerSideTranslations } from '../app/helpers'
+import { addServerSideTranslations, headerTranslationNamespaces } from '../app/helpers'
 
 interface OwnProps {}
 
@@ -17,7 +17,7 @@ const ErrorPage: NextPage<Props> = (props) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
-      ...(await addServerSideTranslations(context)),
+      ...(await addServerSideTranslations(headerTranslationNamespaces, context)),
     },
   }
 }
