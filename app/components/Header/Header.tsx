@@ -44,7 +44,12 @@ const Header: FC<Props> = () => {
             </a>
           </Link>
         </div>
-        <div className={style['header-mobile__burger']} onClick={handleChangeMenuVisible}>
+        <div
+          className={classNames(style['header-mobile__burger'], {
+            [style['header-mobile__burger_active']]: mobileMenuActive,
+          })}
+          onClick={handleChangeMenuVisible}
+        >
           <span
             className={`${style['header-mobile__burger-line']} ${style['header-mobile__burger-line_first']}`}
           />

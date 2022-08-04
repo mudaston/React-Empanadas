@@ -93,21 +93,40 @@
   // .header-mobile__burger
   &__burger {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     gap: 5px;
 
+    position: relative;
     z-index: 2;
 
+    padding: 15px 20px;
+
     cursor: pointer;
+    overflow: hidden;
 
-    padding: 10px;
+    // .header-mobile__burger_active
+    &_active {
+      .header-mobile__burger-line_first {
+        transform: rotate(45deg) translateY(-50%);
+        top: 50%;
+      }
 
+      .header-mobile__burger-line_second {
+        width: 0;
+      }
+
+      .header-mobile__burger-line_third {
+        transform: rotate(-45deg) translateY(70%);
+        bottom: 50%;
+      }
+    }
   }
 
   // .header-mobile__burger-line
   &__burger-line {
     display: block;
+
+    position: absolute;
 
     width: 25px;
     height: 2px;
@@ -116,16 +135,22 @@
 
     background-color: $main-color;
 
+    transition: .2s ease;
+
     // .header-mobile__burger-line_first
     &_first {
+      top: 8px;
     }
 
     // .header-mobile__burger-line_second
     &_second {
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     // .header-mobile__burger-line_third
     &_third {
+      bottom: 8px;
     }
   }
 }
