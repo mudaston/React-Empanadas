@@ -17,8 +17,6 @@ export default async function handler(
     },
   })
 
-  console.log(data)
-
   if (!data)
     res.status(404).json({
       data: [

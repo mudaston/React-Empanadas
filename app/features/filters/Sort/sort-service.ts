@@ -8,8 +8,8 @@ interface IGetFilters {
   locale: LocaleType
 }
 
-export const filtersApi = createApi({
-  reducerPath: 'testApi',
+export const sortApi = createApi({
+  reducerPath: 'sortApi',
   keepUnusedDataFor: 3600,
   refetchOnReconnect: true,
   baseQuery: fetchBaseQuery({ baseUrl: process.env.API_URL }),
@@ -36,5 +36,5 @@ export const filtersApi = createApi({
 export const {
   useGetFiltersQuery,
   util: { getRunningOperationPromises },
-} = filtersApi
-export const { getFilters } = filtersApi.endpoints
+} = sortApi
+export const { getFilters } = sortApi.endpoints
