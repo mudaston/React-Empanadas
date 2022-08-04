@@ -3,7 +3,7 @@ import { FC } from 'react'
 import style from './Counter.module.scss'
 
 interface OwnProps {
-  children: string
+  children: string | number
 }
 
 export type Props = OwnProps

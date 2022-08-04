@@ -15,7 +15,7 @@ interface OwnProps {
   textTransform?: textTransformTypes
   topOffset?: string
   hoverEffect?: hoverEffect
-  active: boolean
+  showDropdown: boolean
 }
 
 type Props = OwnProps
@@ -28,7 +28,7 @@ const Dropdown: FC<Props> = ({
   align = 'left',
   topOffset = '20px',
   hoverEffect = false,
-  active = false,
+  showDropdown = false,
 }) => {
   const [currentActiveItem, setCurrentActiveItem] = useState(activeItem)
 
@@ -50,7 +50,7 @@ const Dropdown: FC<Props> = ({
     <div
       style={{
         top: topOffset,
-        display: active ? 'block' : 'none',
+        display: showDropdown ? 'block' : 'none',
       }}
       className={classNames(style.dropdown, {
         [style.dropdown_align_left]: align === 'left',

@@ -1,1 +1,2 @@
-export { addHeaderTranslation } from './add-header-translation'
+export { addServerSideTranslations } from './addServerSideTranslations'
+export { headerTranslationNamespaces } from './translation-namespaces'

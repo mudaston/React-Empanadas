@@ -34,7 +34,7 @@ const LanguageSwitcher: FC<Props> = () => {
           {locale}
         </button>
         <Dropdown
-          active={active}
+          showDropdown={active}
           align={'center'}
           textTransform={'uppercase'}
           callback={handleOnItemChoose}
