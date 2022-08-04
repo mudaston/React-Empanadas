@@ -1,6 +1,6 @@
 import { GetServerSideProps, NextPage } from 'next'
 
-import { addServerSideTranslations } from '../app/helpers'
+import { addServerSideTranslations, headerTranslationNamespaces } from '../app/helpers'
 
 interface OwnProps {}
 
@@ -13,7 +13,7 @@ const Order: NextPage<Props> = (props) => {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
-      ...(await addServerSideTranslations(context)),
+      ...(await addServerSideTranslations(headerTranslationNamespaces, context)),
     },
   }
 }
