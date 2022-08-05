@@ -1,4 +1,4 @@
-import { Children, FC, memo, MouseEvent, useState } from 'react'
+import { FC, memo, useState } from 'react'
 import classNames from 'classnames'
 
 import style from './Dropdown.module.scss'
@@ -7,9 +7,14 @@ type alignTypes = 'left' | 'right' | 'center'
 type textTransformTypes = 'uppercase' | 'lowercase'
 type hoverEffect = true | false
 
+interface DropDownItem {
+  id: number
+  label: string
+}
+
 interface OwnProps {
-  children: JSX.Element[] | JSX.Element | string[] | string
-  callback: (item: string | null) => void
+  items: DropDownItem[]
+  callback: (id: number, label: string | null) => void
   activeItem?: string
   align?: alignTypes
   textTransform?: textTransformTypes
@@ -21,7 +26,7 @@ interface OwnProps {
 type Props = OwnProps
 
 const Dropdown: FC<Props> = ({
-  children,
+  items,
   textTransform = 'lowercase',
   callback,
   activeItem,
@@ -32,16 +37,14 @@ const Dropdown: FC<Props> = ({
 }) => {
   const [currentActiveItem, setCurrentActiveItem] = useState(activeItem)
 
-  const HandleOnItemClick = (item: MouseEvent<HTMLButtonElement>) => {
-    const textContent = item.currentTarget.textContent
+  const HandleOnItemClick = (id: number, label: string) => {
+    if (label === currentActiveItem) return
 
-    if (textContent === currentActiveItem) return
-
-    callback(textContent)
+    callback(id, label)
 
     if (!activeItem) return
 
-    setCurrentActiveItem(textContent ?? activeItem)
+    setCurrentActiveItem(label ?? activeItem)
   }
 
   const setActiveClass = typeof activeItem !== typeof undefined
@@ -59,17 +62,17 @@ const Dropdown: FC<Props> = ({
       })}
     >
       <ul className={style.dropdown__list}>
-        {Children.map(children, (child) => (
-          <li key={1}>
+        {items.map(({ id, label }) => (
+          <li key={id}>
             <button
               style={{ textTransform }}
-              onClick={HandleOnItemClick}
+              onClick={() => HandleOnItemClick(id, label)}
               className={classNames(style.dropdown__item, {
-                [style.dropdown__item_active]: setActiveClass && child === currentActiveItem,
+                [style.dropdown__item_active]: setActiveClass && label === currentActiveItem,
                 [style.dropdown__item_hover]: hoverEffect,
               })}
             >
-              {child}
+              {label}
             </button>
           </li>
         ))}
