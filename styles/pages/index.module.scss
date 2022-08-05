@@ -6,6 +6,23 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 20px 80px;
+  }
+
+  // .all-empanadas__list-wrapper
+  &__list-wrapper {
+    padding-top: 2rem;
+  }
+
+  // .all-empanadas__list
+  &__list {
+    padding-top: 2.1875rem;
+  }
+
+  // .all-empanadas__title
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
   }
 }
