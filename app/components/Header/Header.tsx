@@ -61,7 +61,6 @@ const Header: FC<Props> = () => {
           />
         </div>
       </div>
-      {/*`${style['header__wrapper']} container`*/}
       <div
         className={classNames('container', style['header__wrapper'], {
           [style['header__wrapper_active']]: mobileMenuActive,
