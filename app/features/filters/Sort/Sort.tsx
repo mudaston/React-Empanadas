@@ -23,21 +23,20 @@ const Sort: FC<Props> = (props) => {
   const [showDropdown, setShowDropdown] = useState(false)
   const [currentOption, setCurrentOption] = useState(data?.data[0].label)
 
-  const handleOnShowStateChange = () => {
-    setShowDropdown((prevState) => !prevState)
-  }
-
   const handleOnItemChoose = useCallback((id: number, option: string | null) => {
     setCurrentOption(option ?? data?.data[0].label)
-    handleOnShowStateChange()
+    setShowDropdown(false)
   }, [])
 
   const memoizedFilters = useMemo(() => data?.data.map(({ id, label }) => ({ id, label })), [])
 
   return (
-    <OutsideClickHandler onOutsideClick={handleOnShowStateChange} disabled={!showDropdown}>
+    <OutsideClickHandler onOutsideClick={() => setShowDropdown(false)} disabled={!showDropdown}>
       <div className={style['wrapper']}>
-        <div className={style['sort']} onClick={handleOnShowStateChange}>
+        <div
+          className={style['sort']}
+          onClick={() => (!showDropdown ? setShowDropdown(true) : setShowDropdown(false))}
+        >
           <span
             className={cn('icon-chevron_down', style['sort__icon'], {
               [style['sort__icon_active']]: showDropdown,
