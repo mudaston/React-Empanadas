@@ -19,16 +19,13 @@ export const categoriesApi = createApi({
     }
   },
   endpoints: (builder) => ({
-    getCategories: builder.query<string[], IGetCategories>({
+    getCategories: builder.query<IGetCategoriesResponse, IGetCategories>({
       query: ({ locale }: IGetCategories) => ({
         url: `/${apiPaths.getCategoriesFilters}`,
         params: {
           locale,
         },
       }),
-      transformResponse(response: IGetCategoriesResponse) {
-        return response.data
-      },
     }),
   }),
 })

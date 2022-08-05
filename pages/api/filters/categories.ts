@@ -11,22 +11,21 @@ export default async function handler(
     query: { locale },
   } = req
 
-  const { data } = await axiosWorker.get(`${locale}`, {
-    params: {
-      name: 'categories',
-    },
-  })
-
-  if (!data)
-    res.status(404).json({
-      data: [
-        'An error occurred while requesting data.' +
-          '\nResult object is empty' +
-          '\nPerhaps the locale parameter is incorrect',
-      ],
+  try {
+    const { data } = await axiosWorker.get(`${locale}`, {
+      params: {
+        name: 'categories',
+      },
     })
 
-  res.status(200).json({
-    data: [...data[0].filters],
-  })
+    res.status(200).json({
+      data: data[0].filters,
+      error: '',
+    })
+  } catch (e) {
+    res.status(404).json({
+      data: [],
+      error: String(e),
+    })
+  }
 }

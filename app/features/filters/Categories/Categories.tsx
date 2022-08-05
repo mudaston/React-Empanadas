@@ -15,25 +15,25 @@ type Props = OwnProps
 
 const Categories: FC<Props> = (props) => {
   const { locale } = useRouter()
-  const { data: categories } = useGetCategoriesQuery({ locale: locale as LocaleType })
-  const [currentCategory, setCurrentCategory] = useState(categories?.[0])
+  const { data } = useGetCategoriesQuery({ locale: locale as LocaleType })
+  const [currentCategory, setCurrentCategory] = useState(data?.data[0].label)
 
-  const chooseCategoryHandler = (category: string) => {
-    if (category === currentCategory) return
+  const chooseCategoryHandler = (label: string, value: string) => {
+    if (label === currentCategory) return
 
-    setCurrentCategory(category)
+    setCurrentCategory(label)
   }
 
   return (
     <ul className={style['categories']}>
-      {categories?.map((category) => (
-        <li key={category} className={style['categories__item']}>
+      {data?.data.map(({ id, label, value }) => (
+        <li key={id} className={style['categories__item']}>
           <Button
             type={'choose-filter-button'}
-            isActive={category === currentCategory}
-            onClick={() => chooseCategoryHandler(category)}
+            isActive={label === currentCategory}
+            onClick={() => chooseCategoryHandler(label, value)}
           >
-            <Button.LabelBold>{category}</Button.LabelBold>
+            <Button.LabelBold>{label}</Button.LabelBold>
           </Button>
         </li>
       ))}
