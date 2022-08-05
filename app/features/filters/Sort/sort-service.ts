@@ -19,16 +19,13 @@ export const sortApi = createApi({
     }
   },
   endpoints: (builder) => ({
-    getFilters: builder.query<string[], IGetFilters>({
+    getFilters: builder.query<IGetFiltersResponse, IGetFilters>({
       query: ({ locale }: IGetFilters) => ({
         url: `/${apiPaths.getSortFilters}`,
         params: {
           locale,
         },
       }),
-      transformResponse(response: IGetFiltersResponse) {
-        return response.data
-      },
     }),
   }),
 })

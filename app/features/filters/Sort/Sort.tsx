@@ -18,21 +18,21 @@ type Props = OwnProps
 
 const Sort: FC<Props> = (props) => {
   const { locale } = useRouter()
-  const { data: filters = [] } = useGetFiltersQuery({ locale: locale as LocaleType })
+  const { data } = useGetFiltersQuery({ locale: locale as LocaleType })
   const { t } = useTranslation(['common'])
   const [showDropdown, setShowDropdown] = useState(false)
-  const [currentOption, setCurrentOption] = useState(filters[0])
+  const [currentOption, setCurrentOption] = useState(data?.data[0].label)
 
   const handleOnShowStateChange = () => {
     setShowDropdown((prevState) => !prevState)
   }
 
-  const handleOnItemChoose = useCallback((option: string | null) => {
-    setCurrentOption(option ?? filters[0])
+  const handleOnItemChoose = useCallback((id: number, option: string | null) => {
+    setCurrentOption(option ?? data?.data[0].label)
     handleOnShowStateChange()
   }, [])
 
-  const memoizedFilters = useMemo(() => filters, [])
+  const memoizedFilters = useMemo(() => data?.data.map(({ id, label }) => ({ id, label })), [])
 
   return (
     <OutsideClickHandler onOutsideClick={handleOnShowStateChange} disabled={!showDropdown}>
@@ -47,6 +47,7 @@ const Sort: FC<Props> = (props) => {
           <span className={style['sort__current-option']}>{currentOption}</span>
         </div>
         <Dropdown
+          items={memoizedFilters ?? []}
           showDropdown={showDropdown}
           align={'right'}
           textTransform={'lowercase'}
@@ -54,9 +55,7 @@ const Sort: FC<Props> = (props) => {
           callback={handleOnItemChoose}
           hoverEffect
           topOffset={'50px'}
-        >
-          {memoizedFilters}
-        </Dropdown>
+        />
       </div>
     </OutsideClickHandler>
   )
