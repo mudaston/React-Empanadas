@@ -1,7 +1,7 @@
 @import "../../../../styles/colors.module";
+@import "../../../../styles/mixins/underline-dashed";
 
 .wrapper {
-  position: relative;
 }
 
 .sort {
@@ -38,8 +38,12 @@
 
   // .sort__current-option
   &__current-option {
+    position: relative;
+
     color: $main-color;
     text-transform: lowercase;
+
+    @include underline-dashed();
   }
 }
 
