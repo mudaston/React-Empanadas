@@ -1,5 +1,0 @@
-@import "../colors.module";
-
-@mixin underline-dotted($thickness: 1px) {
-  border-bottom: $thickness dotted $main-color;
-}
