@@ -1,20 +1,58 @@
 @import "normalize";
 @import "fonts-style";
+@import "colors.module";
 
 #__next {
   display: flex;
   flex-direction: column;
 
-  min-height: 100vh;
-  height: 100vh;
+  min-height: 100%;
   width: 100%;
 
   overflow: hidden;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    width: 10px;
+    background-color: #fff;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color: $main-color;
+    border-radius: 1rem;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: $text-grey-color;
+  }
+}
+
 .container {
   padding-left: 60px;
   padding-right: 60px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 //rewrite styles for tooltips

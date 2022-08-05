@@ -11,7 +11,7 @@ import '../styles/main-media-adaptation.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className='container'>
+    <div className='container' id='wrapper'>
       <NextNProgress
         height={3}
         options={{ showSpinner: true, easing: 'linear', speed: 300, trickleSpeed: 100 }}
