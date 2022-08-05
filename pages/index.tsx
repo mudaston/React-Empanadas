@@ -31,7 +31,7 @@ const Home: NextPage = (props) => {
 
 export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps(
   (store) => async (context) => {
-    const { locale, defaultLocale } = context
+    const { locale } = context
 
     store.dispatch(getCategories.initiate({ locale: locale as string }))
     store.dispatch(getFilters.initiate({ locale: locale as string }))
