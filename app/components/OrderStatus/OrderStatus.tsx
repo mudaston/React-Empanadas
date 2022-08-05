@@ -42,10 +42,9 @@ const OrderStatus: FC<Props> = (props) => {
         <>
           <ReactTooltip
             id='order-sum'
-            border={true}
-            borderColor={colors.mainColor}
-            textColor={colors.mainColor}
-            type={'light'}
+            textColor={colors.textColorSecondary}
+            backgroundColor={colors.tooltipBackgroundColor}
+            type={'dark'}
             effect={'solid'}
             place={'bottom'}
             delayShow={200}
@@ -54,10 +53,9 @@ const OrderStatus: FC<Props> = (props) => {
           />
           <ReactTooltip
             id='shopping-cart'
-            border={true}
-            borderColor={colors.mainColor}
-            textColor={colors.mainColor}
-            type={'light'}
+            textColor={colors.textColorSecondary}
+            backgroundColor={colors.tooltipBackgroundColor}
+            type={'dark'}
             effect={'solid'}
             place={'bottom'}
             delayShow={200}
