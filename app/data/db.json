@@ -3,19 +3,86 @@
     {
       "name": "filters",
       "filters": [
-        "Популярности",
-        "Цене",
-        "Алфавиту"
+        {
+          "id": 0,
+          "label": "Популярности",
+          "value": "popularity"
+        },
+        {
+          "id": 1,
+          "label": "Цене",
+          "value": "price"
+        },
+        {
+          "id": 2,
+          "label": "Алфавиту",
+          "value": "alphabet"
+        }
       ]
     },
     {
       "name": "categories",
       "filters": [
-        "Все",
-        "Мясные",
-        "Гриль",
-        "Острые",
-        "Вегетарианские"
+        {
+          "id": 0,
+          "label": "Все",
+          "value": "all"
+        },
+        {
+          "id": 1,
+          "label": "Мясные",
+          "value": "meat"
+        },
+        {
+          "id": 2,
+          "label": "Сырные",
+          "value": "cheese"
+        },
+        {
+          "id": 3,
+          "label": "Острые",
+          "value": "spicy"
+        }
+      ]
+    },
+    {
+      "name": "empanadas",
+      "empanadas": [
+        {
+          "id": 0,
+          "name": "Traditional Beef",
+          "label": "Традиционная говядина",
+          "image": "https://i.postimg.cc/8cRFpt9C/empanadas-with-meat-webp.webp",
+          "types": [
+            "meat"
+          ],
+          "price_in_dollars": 1.62,
+          "number_of_orders": 336
+        },
+        {
+          "id": 1,
+          "name": "Spicy Chicken",
+          "label": "Острая курица",
+          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "types": [
+            "meat",
+            "spicy"
+          ],
+          "price_in_dollars": 1.22,
+          "number_of_orders": 767
+        },
+        {
+          "id": 2,
+          "name": "Ham & Cheese",
+          "label": "Ветчина и сыр",
+          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "types": [
+            "meat",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 560
+        }
       ]
     }
   ],
@@ -23,19 +90,85 @@
     {
       "name": "filters",
       "filters": [
-        "Popularity",
-        "Price",
-        "Alphabet"
+        {
+          "id": 0,
+          "label": "Popularity",
+          "value": "popularity"
+        },
+        {
+          "id": 1,
+          "label": "Price",
+          "value": "price"
+        },
+        {
+          "id": 2,
+          "label": "Alphabet",
+          "value": "alphabet"
+        }
       ]
     },
     {
       "name": "categories",
       "filters": [
-        "All",
-        "Meat",
-        "Grill",
-        "Spicy",
-        "Vegetarian"
+        {
+          "id": 0,
+          "label": "All",
+          "value": "all"
+        },
+        {
+          "id": 1,
+          "label": "Meat",
+          "value": "meat"
+        },
+        {
+          "id": 2,
+          "label": "Cheese",
+          "value": "cheese"
+        },
+        {
+          "id": 3,
+          "label": "Spicy",
+          "value": "spicy"
+        }
+      ]
+    },
+    {
+      "name": "empanadas",
+      "empanadas": [
+        {
+          "id": 0,
+          "name": "Traditional Beef",
+          "label": "Traditional Beef",
+          "image": "https://i.postimg.cc/8cRFpt9C/empanadas-with-meat-webp.webp",
+          "types": [
+            "meat"
+          ],
+          "price_in_dollars": 1.62,
+          "number_of_orders": 336
+        },
+        {
+          "id": 1,
+          "name": "Spicy Chicken",
+          "label": "Spicy Chicken",
+          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "types": [
+            "spicy"
+          ],
+          "price_in_dollars": 1.22,
+          "number_of_orders": 767
+        },
+        {
+          "id": 2,
+          "name": "Ham & Cheese",
+          "label": "Ham & Cheese",
+          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "types": [
+            "meat",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 560
+        }
       ]
     }
   ],
@@ -43,19 +176,85 @@
     {
       "name": "filters",
       "filters": [
-        "Популярності",
-        "Ціні",
-        "Алфавіту"
+        {
+          "id": 0,
+          "label": "Популярності",
+          "value": "popularity"
+        },
+        {
+          "id": 1,
+          "label": "Ціні",
+          "value": "price"
+        },
+        {
+          "id": 2,
+          "label": "Алфавіту",
+          "value": "alphabet"
+        }
       ]
     },
     {
       "name": "categories",
       "filters": [
-        "Всі",
-        "М'ясні",
-        "Гриль",
-        "Гострі",
-        "Вегетаріанські"
+        {
+          "id": 0,
+          "label": "Всі",
+          "value": "all"
+        },
+        {
+          "id": 1,
+          "label": "М'ясні",
+          "value": "meat"
+        },
+        {
+          "id": 2,
+          "label": "Сирні",
+          "value": "cheese"
+        },
+        {
+          "id": 3,
+          "label": "Гострі",
+          "value": "spicy"
+        }
+      ]
+    },
+    {
+      "name": "empanadas",
+      "empanadas": [
+        {
+          "id": 0,
+          "name": "Traditional Beef",
+          "label": "Традиційна яловичина",
+          "image": "https://i.postimg.cc/8cRFpt9C/empanadas-with-meat-webp.webp",
+          "types": [
+            "meat"
+          ],
+          "price_in_dollars": 1.62,
+          "number_of_orders": 336
+        },
+        {
+          "id": 1,
+          "name": "Spicy Chicken",
+          "label": "Гостра курка",
+          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "types": [
+            "spicy"
+          ],
+          "price_in_dollars": 1.22,
+          "number_of_orders": 767
+        },
+        {
+          "id": 2,
+          "name": "Ham & Cheese",
+          "label": "Шинка та сир",
+          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "types": [
+            "meat",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 560
+        }
       ]
     }
   ]
