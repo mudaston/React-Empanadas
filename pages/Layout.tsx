@@ -26,7 +26,8 @@ const Layout: NextPage<Props> = ({ children }) => {
         <title>Altanka</title>
       </Head>
       <Header />
-      {children}
+      <main style={{ flex: '1 1 auto' }}>{children}</main>
+      <footer>awdawd</footer>
     </>
   )
 }
