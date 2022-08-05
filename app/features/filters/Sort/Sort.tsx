@@ -44,18 +44,20 @@ const Sort: FC<Props> = (props) => {
             })}
           />
           <span className={style['sort__text']}>{t('common:sort_by')}:&nbsp;&nbsp;</span>
-          <span className={style['sort__current-option']}>{currentOption}</span>
+          <span className={style['sort__current-option']}>
+            {currentOption}
+            <Dropdown
+              items={memoizedFilters ?? []}
+              showDropdown={showDropdown}
+              align={'right'}
+              textTransform={'lowercase'}
+              activeItem={currentOption}
+              callback={handleOnItemChoose}
+              hoverEffect
+              topOffset={'30px'}
+            />
+          </span>
         </div>
-        <Dropdown
-          items={memoizedFilters ?? []}
-          showDropdown={showDropdown}
-          align={'right'}
-          textTransform={'lowercase'}
-          activeItem={currentOption}
-          callback={handleOnItemChoose}
-          hoverEffect
-          topOffset={'50px'}
-        />
       </div>
     </OutsideClickHandler>
   )
