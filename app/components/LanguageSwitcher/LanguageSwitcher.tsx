@@ -14,7 +14,7 @@ const LanguageSwitcher: FC<Props> = () => {
   const { pathname, asPath, query, locales, locale, push, defaultLocale } = useRouter()
   const [active, setActive] = useState(false)
 
-  const handleOnItemChoose = useCallback((item: string | null) => {
+  const handleOnItemChoose = useCallback((id: number, item: string | null) => {
     const chosenLocale = item ?? defaultLocale
 
     handleOnShowStateChange()
@@ -25,7 +25,10 @@ const LanguageSwitcher: FC<Props> = () => {
     setActive((prevState) => !prevState)
   }
 
-  const availableLocales = useMemo(() => locales?.filter((lang) => lang !== locale) ?? [], [locale])
+  const availableLocales = useMemo(
+    () => locales?.filter((lang) => lang !== locale).map((label, i) => ({ id: i, label })) ?? [],
+    [locale]
+  )
 
   return (
     <OutsideClickHandler onOutsideClick={handleOnShowStateChange} disabled={!active}>
@@ -34,15 +37,14 @@ const LanguageSwitcher: FC<Props> = () => {
           {locale}
         </button>
         <Dropdown
+          items={availableLocales}
           showDropdown={active}
           align={'center'}
           textTransform={'uppercase'}
           callback={handleOnItemChoose}
           hoverEffect
           topOffset={'30px'}
-        >
-          {availableLocales}
-        </Dropdown>
+        />
       </div>
     </OutsideClickHandler>
   )
