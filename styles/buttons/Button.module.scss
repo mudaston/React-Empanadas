@@ -32,3 +32,23 @@
     background-color: $grey-color;
   }
 }
+
+.add-item-button {
+  padding: 10px 17px;
+
+  border: 1px solid $main-color;
+
+  color: $main-color;
+
+  background-color: $text-color--secondary;
+
+  // .choose-filter-button_active
+  &_active {
+
+  }
+
+  &:hover:not(.choose-filter-button_active) {
+    color: $text-color--secondary;
+    background-color: $main-color;
+  }
+}
