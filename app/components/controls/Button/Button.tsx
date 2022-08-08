@@ -8,7 +8,7 @@ import Counter, { Props as CounterProps } from './Counter/Counter'
 
 import style from '../../../../styles/buttons/Button.module.scss'
 
-type ButtonTypes = 'none' | 'choose-filter-button'
+type ButtonTypes = 'none' | 'choose-filter-button' | 'add-item-button'
 
 interface OwnProps {
   type?: ButtonTypes
@@ -32,6 +32,8 @@ const Button: FC<Props> & Subcomponents = ({ children, onClick, isActive, type }
       className={cn(style['base-button'], {
         [style['choose-filter-button']]: type === 'choose-filter-button',
         [style['choose-filter-button_active']]: type === 'choose-filter-button' && isActive,
+        [style['add-item-button']]: type === 'add-item-button',
+        [style['add-item-button_active']]: type === 'add-item-button' && isActive,
       })}
       onClick={() => onClick?.()}
     >
