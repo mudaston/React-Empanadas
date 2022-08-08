@@ -37,11 +37,11 @@ html {
 
 @font-face {
   font-family: 'icomoon';
-  src:  url('../app/assets/fonts/icomoon.eot?d4fl9p');
-  src:  url('../app/assets/fonts/icomoon.eot?d4fl9p#iefix') format('embedded-opentype'),
-  url('../app/assets/fonts/icomoon.ttf?d4fl9p') format('truetype'),
-  url('../app/assets/fonts/icomoon.woff?d4fl9p') format('woff'),
-  url('../app/assets/fonts/icomoon.svg?d4fl9p#icomoon') format('svg');
+  src:  url('../app/assets/fonts/icomoon.eot?hdqd63');
+  src:  url('../app/assets/fonts/icomoon.eot?hdqd63#iefix') format('embedded-opentype'),
+  url('../app/assets/fonts/icomoon.ttf?hdqd63') format('truetype'),
+  url('../app/assets/fonts/icomoon.woff?hdqd63') format('woff'),
+  url('../app/assets/fonts/icomoon.svg?hdqd63#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -71,7 +71,14 @@ html {
 .icon-shopping-cart:before {
   content: "\e902";
 }
+.icon-minus-icon:before {
+  content: "\e904";
+}
+.icon-plus-icon:before {
+  content: "\e903";
+}
 .icon-chevron_down:before {
   content: "\e901";
 }
+
 
