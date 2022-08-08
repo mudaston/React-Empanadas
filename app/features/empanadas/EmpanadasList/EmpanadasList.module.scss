@@ -1,3 +1,12 @@
 .empanadas-list {
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 280px);
+  justify-content: center;
+  gap: 65px;
+
+  max-width: 1425px;
+  width: 100%;
+
+  margin: 0 auto;
+  padding: 0;
 }
