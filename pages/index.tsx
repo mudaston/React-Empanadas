@@ -17,7 +17,10 @@ import {
   getEmpanadas,
   getRunningOperationPromises as empanadasOperations,
 } from '../app/features/empanadas/empanadas-service'
-
+// import {
+//   getExchangeRate,
+//   getRunningOperationPromises as exchangeOperations,
+// } from '../app/redux/apis/currency-exchange-api'
 import Categories from '../app/features/filters/Categories/Categories'
 import Sort from '../app/features/filters/Sort/Sort'
 import EmpanadasList from '../app/features/empanadas/EmpanadasList/EmpanadasList'
@@ -35,7 +38,7 @@ const Home: NextPage = (props) => {
           <Sort />
         </div>
         <div className={style['all-empanadas__list-wrapper']}>
-          <span className={style['all-empanadas__title']}>{t('home:all_empanadas')}</span>
+          <h2 className={style['all-empanadas__title']}>{t('home:all_empanadas')}</h2>
           <div className={style['all-empanadas__list']}>
             <EmpanadasList />
           </div>
@@ -52,10 +55,12 @@ export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps
     store.dispatch(getCategories.initiate({ locale: locale as string }))
     store.dispatch(getFilters.initiate({ locale: locale as string }))
     store.dispatch(getEmpanadas.initiate({ locale: locale as string }))
+    // store.dispatch(getExchangeRate.initiate())
 
     await Promise.all(categoriesOperations())
     await Promise.all(filtersOperations())
     await Promise.all(empanadasOperations())
+    // await Promise.all(exchangeOperations())
 
     return {
       props: {
