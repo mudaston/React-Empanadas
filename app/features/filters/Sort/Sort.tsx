@@ -1,4 +1,5 @@
-import { FC, useCallback, useMemo, useState } from 'react'
+import { FC, useCallback, useEffect, useMemo, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import OutsideClickHandler from 'react-outside-click-handler'
@@ -7,6 +8,7 @@ import cn from 'classnames'
 import type { LocaleType } from '../../../../interfaces'
 
 import { useGetFiltersQuery } from './sort-service'
+import { setSortFilter } from '../../../redux/slices/filters-slice'
 
 import { Dropdown } from '../../../components'
 
@@ -22,9 +24,18 @@ const Sort: FC<Props> = (props) => {
   const { t } = useTranslation(['common'])
   const [showDropdown, setShowDropdown] = useState(false)
   const [currentOption, setCurrentOption] = useState(data?.data[0].label)
+  const [currentValue, setCurrentValue] = useState(data?.data[0].value)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setSortFilter(currentValue ?? ''))
+  }, [currentValue])
 
   const handleOnItemChoose = useCallback((id: number, option: string | null) => {
+    const value = data?.data.find((item) => item.id === id)?.value
+
     setCurrentOption(option ?? data?.data[0].label)
+    setCurrentValue(value)
     setShowDropdown(false)
   }, [])
 
@@ -43,7 +54,7 @@ const Sort: FC<Props> = (props) => {
             })}
           />
           <span className={style['sort__text']}>{t('common:sort_by')}:&nbsp;&nbsp;</span>
-          <span className={style['sort__current-option']}>
+          <div className={style['sort__current-option']}>
             {currentOption}
             <Dropdown
               items={memoizedFilters ?? []}
@@ -55,7 +66,7 @@ const Sort: FC<Props> = (props) => {
               hoverEffect
               topOffset={'30px'}
             />
-          </span>
+          </div>
         </div>
       </div>
     </OutsideClickHandler>
