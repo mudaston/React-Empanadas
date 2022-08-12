@@ -3,15 +3,22 @@
 .counter {
   position: relative;
 
-  padding: 0.625rem;
+  padding: 11px 0;
   border-radius: 100%;
 
   background-color: $main-color;
   color: $text-color--secondary;
   line-height: 1;
 
-  // .counter__number
+  visibility: hidden;
 
+  // .counter_active
+  &_active {
+    padding: 11px;
+    visibility: visible;
+  }
+
+  // .counter__number
   &__number {
     position: absolute;
     top: 50%;

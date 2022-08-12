@@ -1,4 +1,5 @@
 @import "../colors.module";
+@import "../variables.module";
 
 .base-button {
   display: flex;
@@ -14,7 +15,7 @@
 
   cursor: pointer;
 
-  transition: background-color .3s ease, color .3s ease;
+  transition: background-color $animation-time ease, color $animation-time ease;
 
 }
 
@@ -34,7 +35,7 @@
 }
 
 .add-item-button {
-  padding: 10px 17px;
+  padding: 0.5rem 1.0625rem;
 
   border: 1px solid $main-color;
 
@@ -42,7 +43,7 @@
 
   background-color: $text-color--secondary;
 
-  // .choose-filter-button_active
+  // .add-item-button_active
   &_active {
 
   }
@@ -51,4 +52,62 @@
     color: $text-color--secondary;
     background-color: $main-color;
   }
+}
+
+.empty-basket-button {
+  padding: 0.9375rem;
+
+  border: none;
+
+  color: $text-grey-color;
+  font-size: 1rem;
+  line-height: 1px;
+
+  background-color: $text-color--secondary;
+
+  // .empty-basket-button_active
+  &_active {}
+
+  &:hover:not(.empty-basket-button_active) {
+    color: $black-color;
+  }
+}
+
+.get-back-button-with-icon {
+  padding: 1.25rem 1.875rem;
+
+  border: 1px solid $text-grey-color;
+
+  color: $text-grey-color;
+  font-size: 1rem;
+  line-height: 1px;
+
+  background-color: $text-color--secondary;
+
+  transition: border $animation-time ease, color $animation-time ease;
+
+  // .get-back-button-with-icon_active
+  &_active {}
+
+  &:hover:not(.get-back-button-with-icon_active) {
+    color: $black-color;
+    border: 1px solid $black-color;
+  }
+}
+
+.pay-now-button {
+  padding: 1.1875rem 1.875rem;
+
+  border: none;
+
+  color: $text-color--secondary;
+  font-size: 1rem;
+  line-height: 1;
+
+  background-color: $main-color;
+
+  // .pay-now-button_active
+  &_active {}
+
+  &:hover:not(.pay-now-button_active) {}
 }
