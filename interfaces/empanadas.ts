@@ -5,6 +5,7 @@ export interface IEmpanadaItem {
   image: string
   types: string[]
   price_in_dollars: number
+  number_of_orders: number
 }
 
 export interface IEmpanadasResponse {
