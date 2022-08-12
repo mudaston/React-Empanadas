@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app'
+import Head from 'next/head'
 import NextNProgress from 'nextjs-progressbar'
 import { appWithTranslation } from 'next-i18next'
 
@@ -17,6 +18,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         options={{ showSpinner: true, easing: 'linear', speed: 300, trickleSpeed: 100 }}
         color={colors.mainColor}
       />
+      <Head>
+        <title>Altanka</title>
+      </Head>
       <Layout>
         <Component {...pageProps} />
       </Layout>

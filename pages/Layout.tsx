@@ -23,7 +23,6 @@ const Layout: NextPage<Props> = ({ children }) => {
         />
         <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
         <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
-        <title>Altanka</title>
       </Head>
       <Header />
       <main style={{ flex: '1 1 auto' }}>{children}</main>
