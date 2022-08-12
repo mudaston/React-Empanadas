@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo, useState } from 'react'
+import { FC, useMemo, useState } from 'react'
 import { useRouter } from 'next/router'
 import OutsideClickHandler from 'react-outside-click-handler'
 
@@ -14,12 +14,13 @@ const LanguageSwitcher: FC<Props> = () => {
   const { pathname, asPath, query, locales, locale, push, defaultLocale } = useRouter()
   const [active, setActive] = useState(false)
 
-  const handleOnItemChoose = useCallback((id: number, item: string | null) => {
+  const handleOnItemChoose = async (id: number, item: string | null) => {
     const chosenLocale = item ?? defaultLocale
 
     handleOnShowStateChange()
-    push({ pathname, query }, asPath, { locale: chosenLocale })
-  }, [])
+
+    await push({ pathname, query }, asPath, { locale: chosenLocale })
+  }
 
   const handleOnShowStateChange = () => {
     setActive((prevState) => !prevState)
