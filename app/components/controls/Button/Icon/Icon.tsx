@@ -19,7 +19,7 @@ const Icon: FC<Props> = ({ children, fontSize = '1rem', type, transform }) => {
       className={style['icon']}
       style={{
         fontSize,
-        padding: type !== 'weightless' ? `0 calc(${fontSize} / 2)` : '',
+        width: type === 'weightless' ? '' : fontSize,
         transform,
       }}
     >
