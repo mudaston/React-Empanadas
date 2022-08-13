@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import type { IBasketItem } from '../../../interfaces/basket'
+import { IEmpanadaItem } from '../../../interfaces'
 
 interface IEntity extends IBasketItem {
   amount: number
@@ -8,13 +9,19 @@ interface IEntity extends IBasketItem {
 
 interface IInitialState {
   entities: {
-    empanadas: IEntity[]
+    empanadas: {
+      basketItems: IEntity[]
+      orderItems: IEmpanadaItem[]
+    }
   }
 }
 
 const initialState: IInitialState = {
   entities: {
-    empanadas: [],
+    empanadas: {
+      basketItems: [],
+      orderItems: [],
+    },
   },
 }
 
@@ -23,14 +30,16 @@ export const basketSlice = createSlice({
   initialState,
   reducers: {
     addEmpanada(state, action: PayloadAction<IBasketItem>) {
-      const item = state.entities.empanadas.find((item) => item.id === action.payload.id)
+      const item = state.entities.empanadas.basketItems.find(
+        (item) => item.id === action.payload.id
+      )
 
       if (item) {
         item.amount++
         return
       }
 
-      state.entities.empanadas.push({
+      state.entities.empanadas.basketItems.push({
         id: action.payload.id,
         price: action.payload.price,
         amount: 1,
