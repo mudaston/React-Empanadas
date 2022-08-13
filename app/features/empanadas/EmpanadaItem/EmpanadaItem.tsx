@@ -1,6 +1,10 @@
 import { FC } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
+
+import { empanadaAmountByID } from '../../../redux/selectors/basket'
+import { addEmpanada } from '../../../redux/slices/basket-slice'
 
 import { Button } from '../../../components/controls'
 
@@ -17,6 +21,17 @@ type Props = OwnProps
 
 const EmpanadaItem: FC<Props> = ({ id, name, price, image }) => {
   const { t } = useTranslation(['currencies', 'home'])
+  const empanadaAmount = useSelector(empanadaAmountByID(id))
+  const dispatch = useDispatch()
+
+  const addEmpanadaClickHandler = () => {
+    dispatch(
+      addEmpanada({
+        id,
+        price,
+      })
+    )
+  }
 
   return (
     <article className={style['empanada-item']}>
@@ -29,12 +44,14 @@ const EmpanadaItem: FC<Props> = ({ id, name, price, image }) => {
           <span className={style['empanada-item__price']}>
             от {price} {t('currencies:currency')}
           </span>
-          <Button type={'add-item-button'}>
+          <Button type={'add-item-button'} onClick={addEmpanadaClickHandler}>
             <Button.Icon fontSize='12px'>
               <span className='icon-plus-icon' />
             </Button.Icon>
             <Button.LabelBold>{t('home:add')}</Button.LabelBold>
-            {/*<Button.Counter>{3}</Button.Counter>*/}
+            <Button.Counter show={!!empanadaAmount && empanadaAmount > 0}>
+              {empanadaAmount ?? 0}
+            </Button.Counter>
           </Button>
         </footer>
       </div>
