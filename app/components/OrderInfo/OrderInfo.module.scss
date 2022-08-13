@@ -1,0 +1,28 @@
+@import "../../../styles/colors.module";
+
+.order-info {
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 400;
+  font-size: 1.375rem;
+
+  // .order-info__total-pizzas
+  &__total-pizzas {
+  }
+
+  // .order-info__total-pizzas-amount
+  &__total-pizzas-amount {
+    font-weight: 700;
+  }
+
+  // .order-info__order-price
+  &__order-price {
+  }
+
+  // .order-info__order-price-sum
+  &__order-price-sum {
+    font-weight: 700;
+    color: $main-color;
+  }
+}
