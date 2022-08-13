@@ -1,7 +1,41 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { HYDRATE } from 'next-redux-wrapper'
+import axios from 'axios'
 
 import type { IBasketItem } from '../../../interfaces/basket'
-import { IEmpanadaItem } from '../../../interfaces'
+import type { IEmpanadaItem } from '../../../interfaces'
+import { LocaleType } from '../../../interfaces'
+
+import { apiPaths } from '../../helpers/api-paths'
+
+interface IGetQuery {
+  locale: LocaleType
+}
+
+interface IGetEmpanadasByID extends IGetQuery {
+  ids: number[]
+}
+
+export const fetchEmpanadas = createAsyncThunk(
+  'basketSlice/fetchEmpanadas',
+  async ({ locale, ids }: IGetEmpanadasByID, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`${process.env.API_URL}/${apiPaths.getEmpanadasByID}`, {
+        params: {
+          locale,
+          ids: JSON.stringify(ids),
+        },
+      })
+
+      if (response.status !== 200) throw new Error('Server side error')
+
+      return response.data
+    } catch (error) {
+      // @ts-ignore
+      return rejectWithValue(error.message)
+    }
+  }
+)
 
 interface IEntity extends IBasketItem {
   amount: number
@@ -14,6 +48,10 @@ interface IInitialState {
       orderItems: IEmpanadaItem[]
     }
   }
+  isPending: boolean
+  isError: boolean
+  isSuccess: boolean
+  error: string
 }
 
 const initialState: IInitialState = {
@@ -23,6 +61,10 @@ const initialState: IInitialState = {
       orderItems: [],
     },
   },
+  isPending: false,
+  isError: false,
+  isSuccess: false,
+  error: '',
 }
 
 export const basketSlice = createSlice({
@@ -45,6 +87,32 @@ export const basketSlice = createSlice({
         amount: 1,
       })
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(HYDRATE, (_, action) => {
+      // @ts-ignore
+      return action.payload[basketSlice.name]
+    })
+    builder.addCase(fetchEmpanadas.pending, (state) => {
+      state.isPending = true
+      state.error = ''
+      state.isError = false
+      state.isSuccess = false
+    })
+    builder.addCase(fetchEmpanadas.fulfilled, (state, action) => {
+      state.entities.empanadas.orderItems = action.payload.data
+      state.isPending = false
+      state.error = ''
+      state.isError = false
+      state.isSuccess = true
+    })
+    builder.addCase(fetchEmpanadas.rejected, (state, action) => {
+      state.isPending = false
+      // @ts-ignore
+      state.error = action.payload
+      state.isError = true
+      state.isSuccess = false
+    })
   },
 })
 
