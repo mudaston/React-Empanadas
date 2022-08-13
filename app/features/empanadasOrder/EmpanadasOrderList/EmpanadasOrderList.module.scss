@@ -1,0 +1,27 @@
+@import "../../../../styles/colors.module";
+
+.empanadas-order-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+
+  // .empanadas-order-list__li
+  &__li {
+    &:before {
+      content: '';
+      display: block;
+
+      height: 1px;
+      width: 100%;
+
+      margin-bottom: 30px;
+
+      background-color: $grey-color;
+    }
+  }
+}

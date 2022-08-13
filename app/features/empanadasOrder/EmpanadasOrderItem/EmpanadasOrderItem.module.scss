@@ -1,0 +1,55 @@
+@import "../../../../styles/colors.module";
+
+.empanada-order-item {
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: $text-color--primary;
+
+  // .empanada-order-item__header
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  // .empanada-order-item__image
+  &__image {
+    position: relative;
+
+    width: 60px;
+    height: 60px;
+  }
+
+  // .empanada-order-item__title
+  &__title {
+
+  }
+
+  // .empanada-order-item__main
+  &__main {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  // .empanada-order-item__amount
+  &__amount {
+
+
+  }
+
+  // .empanada-order-item__footer
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+  }
+
+  // .empanada-order-item__sum
+  &__sum {
+
+  }
+}
