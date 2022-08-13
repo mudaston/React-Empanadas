@@ -70,7 +70,7 @@ const Header: FC<Props> = () => {
           <div className={style['header__logo']}>
             <Link href={routerPaths.home}>
               <a>
-                <Image src={logo} alt={t('header:cafe_name')} placeholder='blur' />
+                <Image src={logo} alt={t('header:cafe_name')} />
               </a>
             </Link>
           </div>
