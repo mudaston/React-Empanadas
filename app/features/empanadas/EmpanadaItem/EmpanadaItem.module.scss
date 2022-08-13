@@ -8,6 +8,12 @@
 
   cursor: pointer;
 
+  &:hover {
+    .empanada-item__img {
+      transform: translateY(5px);
+    }
+  }
+
   // .empanada-item__img
   &__img {
     margin: 0 auto;
@@ -21,10 +27,6 @@
 
     img {
       object-fit: contain;
-    }
-
-    &:hover {
-      transform: translateY(10px);
     }
   }
 
