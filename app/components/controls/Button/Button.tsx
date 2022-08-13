@@ -24,6 +24,7 @@ interface OwnProps {
   children: JSX.Element | JSX.Element[]
   onClick?: Function
   isActive?: boolean
+  ariaLabel?: string
 }
 
 type Props = OwnProps
@@ -35,7 +36,7 @@ type Subcomponents = {
   Counter: FC<CounterProps>
 }
 
-const Button: FC<Props> & Subcomponents = ({ children, onClick, isActive, type }) => {
+const Button: FC<Props> & Subcomponents = ({ children, onClick, isActive, type, ariaLabel }) => {
   return (
     <button
       className={cn(style['base-button'], {
@@ -43,6 +44,7 @@ const Button: FC<Props> & Subcomponents = ({ children, onClick, isActive, type }
         [style[`${type}_active`]]: type && isActive,
       })}
       onClick={() => onClick?.()}
+      aria-label={ariaLabel}
     >
       {children}
     </button>
