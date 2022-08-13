@@ -5,6 +5,8 @@ import Head from 'next/head'
 import { addServerSideTranslations, headerTranslationNamespaces } from '../../app/helpers'
 
 import { Button } from '../../app/components/controls'
+import EmpanadasOrderList from '../../app/features/empanadasOrder/EmpanadasOrderList/EmpanadasOrderList'
+import OrderInfo from '../../app/components/OrderInfo/OrderInfo'
 
 import style from './index.module.scss'
 
@@ -35,7 +37,14 @@ const Order: NextPage<Props> = () => {
             <Button.LabelRegular>Очистить корзину</Button.LabelRegular>
           </Button>
         </header>
-        <main className={style['basket__order-list']}></main>
+        <main className={style['basket__order-list']}>
+          <div className={style['basket__order-list-item']}>
+            <EmpanadasOrderList />
+            <div className={style['basket__order-list-item-info']}>
+              <OrderInfo />
+            </div>
+          </div>
+        </main>
         <footer className={style['basket__footer']}>
           <Button type={'get-back-button-with-icon'} onClick={() => router.back()}>
             <Button.Icon fontSize={'12px'}>

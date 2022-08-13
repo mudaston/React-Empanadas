@@ -1,5 +1,5 @@
 .basket {
-  width: 60%;
+  width: 50%;
 
   margin: 0 auto;
   padding: 6.25rem 0;
@@ -33,6 +33,15 @@
 
   // .basket__order-list
   &__order-list {
+
+    // .basket__order-list-item
+    &-item {
+      margin-top: 1.875rem;
+
+      &-info {
+        margin-top: 2.5rem;
+      }
+    }
   }
 
   // .basket__footer
@@ -40,6 +49,6 @@
     display: flex;
     justify-content: space-between;
 
-    margin-top: 40px;
+    margin-top: 2.5rem;
   }
 }
