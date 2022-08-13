@@ -40,8 +40,13 @@
         },
         {
           "id": 3,
-          "label": "Острые",
-          "value": "spicy"
+          "label": "Овощные",
+          "value": "vegetables"
+        },
+        {
+          "id": 4,
+          "label": "Вегетарианские",
+          "value": "vegetarian"
         }
       ]
     },
@@ -68,20 +73,82 @@
             "meat",
             "spicy"
           ],
-          "price_in_dollars": 1.22,
+          "price_in_dollars": 1.40,
           "number_of_orders": 767
         },
         {
           "id": 2,
           "name": "Ham & Cheese",
           "label": "Ветчина и сыр",
-          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "image": "https://i.postimg.cc/ncycd1jZ/Ham-Cheese-webp.webp",
           "types": [
             "meat",
             "cheese"
           ],
           "price_in_dollars": 1.35,
           "number_of_orders": 560
+        },
+        {
+          "id": 3,
+          "name": "Tomato, Mozzarella & Basil",
+          "label": "Помидоры, моцарелла и базилик",
+          "image": "https://i.postimg.cc/HnRtFNXT/Tomato-Mozzarella-Basil-web.webp",
+          "types": [
+            "vegetables",
+            "vegetarian",
+            "cheese"
+          ],
+          "price_in_dollars": 1.20,
+          "number_of_orders": 440
+        },
+        {
+          "id": 4,
+          "name": "Champagne Olives & Mozz",
+          "label": "Шампанские оливки и моцарелла",
+          "image": "https://i.postimg.cc/2ySvVQRb/Champagne-Olives-Mozz-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.30,
+          "number_of_orders": 220
+        },
+        {
+          "id": 5,
+          "name": "Pumpkin & Goat Cheese",
+          "label": "Тыква и козий сыр",
+          "image": "https://i.postimg.cc/zXQ1VqZ0/Pumpkin-Goat-Cheese-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 151
+        },
+        {
+          "id": 6,
+          "name": "Spinach & Ricotta",
+          "label": "Шпинат и рикотта",
+          "image": "https://i.postimg.cc/XYvmKm3X/Spinach-Ricotta-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 180
+        },
+        {
+          "id": 7,
+          "name": "Humita Vegan",
+          "label": "Хумита Веган",
+          "image": "https://i.postimg.cc/y8vbFFLy/Humita-Vegan-wepb.webp",
+          "types": [
+            "vegetables",
+            "vegetarian",
+            "cheese"
+          ],
+          "price_in_dollars": 1.20,
+          "number_of_orders": 56
         }
       ]
     }
@@ -127,8 +194,13 @@
         },
         {
           "id": 3,
-          "label": "Spicy",
-          "value": "spicy"
+          "label": "Vegetables",
+          "value": "vegetables"
+        },
+        {
+          "id": 4,
+          "label": "Vegetarian",
+          "value": "vegetarian"
         }
       ]
     },
@@ -152,22 +224,85 @@
           "label": "Spicy Chicken",
           "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
           "types": [
+            "meat",
             "spicy"
           ],
-          "price_in_dollars": 1.22,
+          "price_in_dollars": 1.40,
           "number_of_orders": 767
         },
         {
           "id": 2,
           "name": "Ham & Cheese",
           "label": "Ham & Cheese",
-          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "image": "https://i.postimg.cc/ncycd1jZ/Ham-Cheese-webp.webp",
           "types": [
             "meat",
             "cheese"
           ],
           "price_in_dollars": 1.35,
           "number_of_orders": 560
+        },
+        {
+          "id": 3,
+          "name": "Tomato, Mozzarella & Basil",
+          "label": "Tomato, Mozzarella & Basil",
+          "image": "https://i.postimg.cc/HnRtFNXT/Tomato-Mozzarella-Basil-web.webp",
+          "types": [
+            "vegetables",
+            "vegetarian",
+            "cheese"
+          ],
+          "price_in_dollars": 1.20,
+          "number_of_orders": 440
+        },
+        {
+          "id": 4,
+          "name": "Champagne Olives & Mozz",
+          "label": "Champagne Olives & Mozz",
+          "image": "https://i.postimg.cc/2ySvVQRb/Champagne-Olives-Mozz-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.30,
+          "number_of_orders": 220
+        },
+        {
+          "id": 5,
+          "name": "Pumpkin & Goat Cheese",
+          "label": "Pumpkin & Goat Cheese",
+          "image": "https://i.postimg.cc/zXQ1VqZ0/Pumpkin-Goat-Cheese-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 151
+        },
+        {
+          "id": 6,
+          "name": "Spinach & Ricotta",
+          "label": "Spinach & Ricotta",
+          "image": "https://i.postimg.cc/XYvmKm3X/Spinach-Ricotta-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 180
+        },
+        {
+          "id": 7,
+          "name": "Humita Vegan",
+          "label": "Humita Vegan",
+          "image": "https://i.postimg.cc/y8vbFFLy/Humita-Vegan-wepb.webp",
+          "types": [
+            "vegetables",
+            "vegetarian",
+            "cheese"
+          ],
+          "price_in_dollars": 1.20,
+          "number_of_orders": 56
         }
       ]
     }
@@ -213,8 +348,13 @@
         },
         {
           "id": 3,
-          "label": "Гострі",
-          "value": "spicy"
+          "label": "Овочеві",
+          "value": "vegetables"
+        },
+        {
+          "id": 4,
+          "label": "Вегетаріанські",
+          "value": "vegetarian"
         }
       ]
     },
@@ -238,22 +378,85 @@
           "label": "Гостра курка",
           "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
           "types": [
+            "meat",
             "spicy"
           ],
-          "price_in_dollars": 1.22,
+          "price_in_dollars": 1.40,
           "number_of_orders": 767
         },
         {
           "id": 2,
           "name": "Ham & Cheese",
           "label": "Шинка та сир",
-          "image": "https://i.postimg.cc/XYR0L4XT/empanadas-with-spicy-chicken-webp.webp",
+          "image": "https://i.postimg.cc/ncycd1jZ/Ham-Cheese-webp.webp",
           "types": [
             "meat",
             "cheese"
           ],
           "price_in_dollars": 1.35,
           "number_of_orders": 560
+        },
+        {
+          "id": 3,
+          "name": "Tomato, Mozzarella & Basil",
+          "label": "Помідори, моцарелла та базилік",
+          "image": "https://i.postimg.cc/HnRtFNXT/Tomato-Mozzarella-Basil-web.webp",
+          "types": [
+            "vegetables",
+            "vegetarian",
+            "cheese"
+          ],
+          "price_in_dollars": 1.20,
+          "number_of_orders": 440
+        },
+        {
+          "id": 4,
+          "name": "Champagne Olives & Mozz",
+          "label": "Шампанські оливки та моцарела",
+          "image": "https://i.postimg.cc/2ySvVQRb/Champagne-Olives-Mozz-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.30,
+          "number_of_orders": 220
+        },
+        {
+          "id": 5,
+          "name": "Pumpkin & Goat Cheese",
+          "label": "Гарбуз і козячий сир",
+          "image": "https://i.postimg.cc/zXQ1VqZ0/Pumpkin-Goat-Cheese-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 151
+        },
+        {
+          "id": 6,
+          "name": "Spinach & Ricotta",
+          "label": "Шпинат і Рікотта",
+          "image": "https://i.postimg.cc/XYvmKm3X/Spinach-Ricotta-webp.webp",
+          "types": [
+            "vegetables",
+            "cheese"
+          ],
+          "price_in_dollars": 1.35,
+          "number_of_orders": 180
+        },
+        {
+          "id": 7,
+          "name": "Humita Vegan",
+          "label": "Хуміта Веган",
+          "image": "https://i.postimg.cc/y8vbFFLy/Humita-Vegan-wepb.webp",
+          "types": [
+            "vegetables",
+            "vegetarian",
+            "cheese"
+          ],
+          "price_in_dollars": 1.20,
+          "number_of_orders": 56
         }
       ]
     }
