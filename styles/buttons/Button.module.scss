@@ -111,3 +111,33 @@
 
   &:hover:not(.pay-now-button_active) {}
 }
+
+.rounded-button-orange {
+  padding: 0.875rem;
+
+  border: 2px solid $main-color;
+
+  color: $main-color;
+
+  background-color: transparent;
+
+  // .rounded-button-orange_active
+  &_active {}
+
+  &:hover:not(.rounded-button-orange_active) {}
+}
+
+.rounded-button-grey {
+  padding: 0.875rem;
+
+  border: 2px solid $text-grey-color;
+
+  color: $text-grey-color;
+
+  background-color: transparent;
+
+  // .rounded-button-grey_active
+  &_active {}
+
+  &:hover:not(.rounded-button-grey_active) {}
+}
