@@ -1,0 +1,45 @@
+.basket {
+  width: 60%;
+
+  margin: 0 auto;
+  padding: 6.25rem 0;
+
+  // .basket__header
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  // .basket__title-wrapper
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  // .basket__icon
+  &__icon {
+    font-size: 1.8125rem;
+  }
+
+  // .basket__title
+  &__title {
+    margin: 0;
+
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  // .basket__order-list
+  &__order-list {
+  }
+
+  // .basket__footer
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 40px;
+  }
+}

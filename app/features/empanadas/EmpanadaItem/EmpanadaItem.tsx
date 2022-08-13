@@ -21,18 +21,11 @@ const EmpanadaItem: FC<Props> = ({ id, name, price, image }) => {
   return (
     <article className={style['empanada-item']}>
       <div className={style['empanada-item__img']}>
-        <Image
-          src={image}
-          blurDataURL={image}
-          layout={'fill'}
-          placeholder={'blur'}
-          loading={'lazy'}
-          alt={name}
-        />
+        <Image src={image} layout={'fill'} loading={'lazy'} alt={name} />
       </div>
       <div className={style['empanada-item__info-wrapper']}>
         <span className={style['empanada-item__name']}>{name}</span>
-        <div className={style['empanada-item__info']}>
+        <footer className={style['empanada-item__info']}>
           <span className={style['empanada-item__price']}>
             от {price} {t('currencies:currency')}
           </span>
@@ -43,7 +36,7 @@ const EmpanadaItem: FC<Props> = ({ id, name, price, image }) => {
             <Button.LabelBold>{t('home:add')}</Button.LabelBold>
             {/*<Button.Counter>{3}</Button.Counter>*/}
           </Button>
-        </div>
+        </footer>
       </div>
     </article>
   )
