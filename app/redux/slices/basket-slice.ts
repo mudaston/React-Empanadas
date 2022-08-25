@@ -89,9 +89,19 @@ export const basketSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(HYDRATE, (_, action) => {
-      // @ts-ignore
-      return action.payload[basketSlice.name]
+    builder.addCase(HYDRATE, (state, action) => {
+      return {
+        ...state,
+        // @ts-ignore
+        ...action.payload[basketSlice.name],
+        entities: {
+          empanadas: {
+            // @ts-ignore
+            ...action.payload[basketSlice.name].entities.empanadas,
+            basketItems: state.entities.empanadas.basketItems,
+          },
+        },
+      }
     })
     builder.addCase(fetchEmpanadas.pending, (state) => {
       state.isPending = true
