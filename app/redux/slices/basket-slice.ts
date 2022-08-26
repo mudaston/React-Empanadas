@@ -87,6 +87,17 @@ export const basketSlice = createSlice({
         amount: 1,
       })
     },
+    emptyBasket(state) {
+      // @ts-ignore
+      Object.keys(state.entities).forEach((entityKey) =>
+        // @ts-ignore
+        Object.keys(state.entities[entityKey]).forEach(
+          (key) =>
+            // @ts-ignore
+            (state.entities[entityKey][key] = [])
+        )
+      )
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action) => {
@@ -126,4 +137,4 @@ export const basketSlice = createSlice({
   },
 })
 
-export const { addEmpanada } = basketSlice.actions
+export const { addEmpanada, emptyBasket } = basketSlice.actions
