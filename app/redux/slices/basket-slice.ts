@@ -87,6 +87,14 @@ export const basketSlice = createSlice({
         amount: 1,
       })
     },
+    deleteEmpanadaByID(state, action: PayloadAction<number>) {
+      state.entities.empanadas.basketItems = state.entities.empanadas.basketItems.filter(
+        ({ id }) => id !== action.payload
+      )
+      state.entities.empanadas.orderItems = state.entities.empanadas.orderItems.filter(
+        ({ id }) => id !== action.payload
+      )
+    },
     emptyBasket(state) {
       // @ts-ignore
       Object.keys(state.entities).forEach((entityKey) =>
@@ -137,4 +145,4 @@ export const basketSlice = createSlice({
   },
 })
 
-export const { addEmpanada, emptyBasket } = basketSlice.actions
+export const { addEmpanada, emptyBasket, deleteEmpanadaByID } = basketSlice.actions
