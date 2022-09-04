@@ -1,5 +1,11 @@
 @media screen and (max-width: 1024px) {
   .basket {
     width: 100%;
+
+    // .basket__footer
+    &__footer {
+      flex-direction: column-reverse;
+      gap: 20px;
+    }
   }
 }

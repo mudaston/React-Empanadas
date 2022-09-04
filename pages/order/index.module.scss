@@ -49,6 +49,8 @@
   &__footer {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
 
     margin-top: 2.5rem;
   }
