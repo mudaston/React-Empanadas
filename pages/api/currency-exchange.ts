@@ -8,7 +8,7 @@ import {
 
 const cors = Cors({
   methods: ['GET'],
-  origin: 'https://react-empanadas.herokuapp.com',
+  origin: '*',
 })
 
 function runMiddleware(

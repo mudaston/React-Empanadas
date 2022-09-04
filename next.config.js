@@ -9,7 +9,7 @@ const nextConfig = {
     domains: ['localhost', 'i.postimg.cc'],
   },
   env: {
-    API_URL: 'http://127.0.0.1:3000/api',
+    API_URL: 'http://localhost:3000/api',
     CURRENT_LOCALE: i18n.defaultLocale,
   },
 }

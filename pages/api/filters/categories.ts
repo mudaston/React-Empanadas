@@ -6,7 +6,7 @@ import { IGetCategoriesResponse } from '../../../interfaces'
 
 const cors = Cors({
   methods: ['GET'],
-  origin: 'https://react-empanadas.herokuapp.com',
+  origin: '*',
 })
 
 function runMiddleware(
@@ -37,9 +37,6 @@ export default async function handler(
     const { data } = await axiosWorker.get(`${locale}`, {
       params: {
         name: 'categories',
-      },
-      headers: {
-        'Access-Control-Allow-Origin': ' *',
       },
     })
 
