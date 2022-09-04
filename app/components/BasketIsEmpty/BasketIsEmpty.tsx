@@ -24,9 +24,9 @@ const BasketIsEmpty: FC<Props> = () => {
         <span className={style['basket-empty__title']}>{t('basket:cart_is_empty')} 😕</span>
         <p className={style['basket-empty__subtitle']}>{t('basket:order_now')}</p>
       </header>
-      <main className={style['basket-empty__image']}>
+      <div className={style['basket-empty__image']}>
         {<Image src={image} alt={''} width={430} height={366} />}
-      </main>
+      </div>
       <footer className={style['basket-empty__footer']}>
         <Button type={'get-back-button'} onClick={() => router.push(routerPaths.home)}>
           <Button.LabelBold>{t('common:come_back')}</Button.LabelBold>
