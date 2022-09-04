@@ -33,7 +33,12 @@ export default async function handler(
 
   try {
     const { data } = await axios.get<ICurrencyExchangeServerResponse>(
-      'https://v6.exchangerate-api.com/v6/26c993debdc06d68aa5521c1/latest/USD'
+      'https://v6.exchangerate-api.com/v6/26c993debdc06d68aa5521c1/latest/USD',
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
     )
 
     res.status(200).json({
