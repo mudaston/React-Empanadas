@@ -25,6 +25,7 @@ export const categoriesApi = createApi({
         params: {
           locale,
         },
+        mode: 'no-cors',
       }),
     }),
   }),

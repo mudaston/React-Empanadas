@@ -25,6 +25,7 @@ export const sortApi = createApi({
         params: {
           locale,
         },
+        mode: 'no-cors',
       }),
     }),
   }),

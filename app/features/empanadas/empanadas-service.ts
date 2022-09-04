@@ -25,6 +25,7 @@ export const empanadasApi = createApi({
         params: {
           locale,
         },
+        mode: 'no-cors',
       }),
     }),
   }),
