@@ -3,17 +3,27 @@
 .empanada-order-item {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 90px;
 
   font-weight: 700;
   font-size: 1.375rem;
   color: $text-color--primary;
+
+  // .empanada-order-item__wrapper
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px 90px;
+    flex: 3;
+  }
 
   // .empanada-order-item__header
   &__header {
     display: flex;
     align-items: center;
     gap: 15px;
-    flex: 2;
+    min-width: 250px;
   }
 
   // .empanada-order-item__image
@@ -30,14 +40,13 @@
 
   // .empanada-order-item__title
   &__title {
-
+    max-width: 65%;
   }
 
   // .empanada-order-item__main
   &__main {
     display: flex;
     gap: 12px;
-    flex: 1;
     align-items: center;
   }
 
@@ -52,12 +61,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 100px;
+    gap: 6.25rem;
     flex: 1;
   }
 
   // .empanada-order-item__sum
   &__sum {
-
+    min-width: 60px;
   }
 }
+
+@import "media";
