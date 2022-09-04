@@ -141,3 +141,18 @@
 
   &:hover:not(.rounded-button-grey_active) {}
 }
+
+.get-back-button {
+  padding: 1.0625rem 2.5rem;
+
+  border: none;
+
+  color: $text-color--secondary;
+
+  background-color: $black-color;
+
+  // .get-back-button_active
+  &_active {}
+
+  &:hover:not(.get-back-button_active) {}
+}
