@@ -16,6 +16,10 @@ export const currencyExchangeApi = createApi({
     getExchangeRate: build.query<ICurrencyExchangeResponse, void>({
       query: () => ({
         url: `/${apiPaths.currencyExchange}`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'no-cors',
       }),
     }),
   }),
