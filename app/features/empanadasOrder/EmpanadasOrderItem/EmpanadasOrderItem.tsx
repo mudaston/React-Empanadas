@@ -33,36 +33,38 @@ const EmpanadasOrderItem: FC<Props> = ({ id, name, image }) => {
 
   return (
     <article className={style['empanada-order-item']}>
-      <header className={style['empanada-order-item__header']}>
-        <div className={style['empanada-order-item__image']}>
-          <Image src={image} layout={'fill'} alt={name} />
+      <div className={style['empanada-order-item__wrapper']}>
+        <header className={style['empanada-order-item__header']}>
+          <div className={style['empanada-order-item__image']}>
+            <Image src={image} layout={'fill'} alt={name} />
+          </div>
+          <span className={style['empanada-order-item__title']}>{name}</span>
+        </header>
+        <div className={style['empanada-order-item__main']}>
+          <Button
+            ariaLabel={'increment item'}
+            type={'rounded-button-orange'}
+            onClick={() => dispatch(decrementEmpanadaByID(id))}
+          >
+            <Button.Icon type={'weightless'} fontSize={'2px'}>
+              <span className='icon-minus-icon' />
+            </Button.Icon>
+          </Button>
+          <span className={style['empanada-order-item__amount']}>{empanadaAmount}</span>
+          <Button
+            ariaLabel={'decrement item'}
+            type={'rounded-button-orange'}
+            onClick={() => dispatch(incrementEmpanadaByID(id))}
+          >
+            <Button.Icon type={'weightless'} fontSize={'11px'}>
+              <span className='icon-plus-icon' />
+            </Button.Icon>
+          </Button>
         </div>
-        <span className={style['empanada-order-item__title']}>{name}</span>
-      </header>
-      <main className={style['empanada-order-item__main']}>
-        <Button
-          ariaLabel={'increment item'}
-          type={'rounded-button-orange'}
-          onClick={() => dispatch(decrementEmpanadaByID(id))}
-        >
-          <Button.Icon type={'weightless'} fontSize={'2px'}>
-            <span className='icon-minus-icon' />
-          </Button.Icon>
-        </Button>
-        <span className={style['empanada-order-item__amount']}>{empanadaAmount}</span>
-        <Button
-          ariaLabel={'decrement item'}
-          type={'rounded-button-orange'}
-          onClick={() => dispatch(incrementEmpanadaByID(id))}
-        >
-          <Button.Icon type={'weightless'} fontSize={'11px'}>
-            <span className='icon-plus-icon' />
-          </Button.Icon>
-        </Button>
-      </main>
+      </div>
       <footer className={style['empanada-order-item__footer']}>
         <span className={style['empanada-order-item__sum']}>
-          {exchangeCurrency(cost)} {t('currencies:currency')}
+          {exchangeCurrency(cost)}&nbsp;{t('currencies:currency')}
         </span>
         <Button
           ariaLabel={'delete item'}
