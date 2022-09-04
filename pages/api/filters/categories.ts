@@ -6,7 +6,6 @@ import { IGetCategoriesResponse } from '../../../interfaces'
 
 const cors = Cors({
   methods: ['GET'],
-  origin: '*',
 })
 
 function runMiddleware(
