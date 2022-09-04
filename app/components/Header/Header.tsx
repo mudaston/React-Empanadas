@@ -40,7 +40,7 @@ const Header: FC<Props> = () => {
         <div className={style['header-mobile__logo']}>
           <Link href={routerPaths.home}>
             <a>
-              <Image src={logo} alt={t('header:cafe_name')} />
+              <Image src={logo} alt={t('header:cafe_name')} width={38} height={38} />
             </a>
           </Link>
         </div>
