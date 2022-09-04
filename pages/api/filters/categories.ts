@@ -38,6 +38,9 @@ export default async function handler(
       params: {
         name: 'categories',
       },
+      headers: {
+        'Access-Control-Allow-Origin': ' *',
+      },
     })
 
     res.status(200).json({
