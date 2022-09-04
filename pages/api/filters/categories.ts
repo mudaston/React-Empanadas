@@ -1,12 +1,34 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+import Cors from 'cors'
 import { axiosWorker } from '../../../services/axios-worker'
 
 import { IGetCategoriesResponse } from '../../../interfaces'
+
+const cors = Cors({
+  methods: ['GET'],
+  origin: 'https://react-empanadas.herokuapp.com',
+})
+
+function runMiddleware(
+  req: NextApiRequest,
+  res: NextApiResponse<IGetCategoriesResponse>,
+  fn: Function
+) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result: any) => {
+      if (result instanceof Error) return reject(result)
+
+      return resolve(result)
+    })
+  })
+}
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<IGetCategoriesResponse>
 ) {
+  await runMiddleware(req, res, cors)
+
   const {
     query: { locale },
   } = req
