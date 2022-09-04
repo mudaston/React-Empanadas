@@ -1,7 +1,7 @@
 @media screen and (max-width: 576px) {
   .empanada-order-item {
     flex-direction: column-reverse;
-    row-gap: 30px;
+    row-gap: 20px;
 
     // .empanada-order-item__wrapper
     &__wrapper {
@@ -10,12 +10,13 @@
 
     // .empanada-order-item__header
     &__header {
-      align-self: center;
+      gap: 30px;
     }
 
     // .empanada-order-item__image
     &__image {
-
+      width: 110px;
+      height: 110px;
     }
 
     // .empanada-order-item__title
