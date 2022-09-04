@@ -16,7 +16,9 @@ const EmpanadasList: FC<Props> = () => {
   return (
     <ul className={style['empanadas-list']}>
       {empanadas?.map(({ id, label, image, price_in_dollars }) => (
-        <EmpanadaItem key={id} id={id} name={label} image={image} price={price_in_dollars} />
+        <li key={id}>
+          <EmpanadaItem id={id} name={label} image={image} price={price_in_dollars} />
+        </li>
       ))}
     </ul>
   )
