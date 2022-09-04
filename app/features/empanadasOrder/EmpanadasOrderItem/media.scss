@@ -1,0 +1,46 @@
+@media screen and (max-width: 576px) {
+  .empanada-order-item {
+    flex-direction: column-reverse;
+    row-gap: 30px;
+
+    // .empanada-order-item__wrapper
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    // .empanada-order-item__header
+    &__header {
+      align-self: center;
+    }
+
+    // .empanada-order-item__image
+    &__image {
+
+    }
+
+    // .empanada-order-item__title
+    &__title {
+
+    }
+
+    // .empanada-order-item__main
+    &__main {
+
+    }
+
+    // .empanada-order-item__amount
+    &__amount {
+
+    }
+
+    // .empanada-order-item__footer
+    &__footer {
+
+    }
+
+    // .empanada-order-item__sum
+    &__sum {
+
+    }
+  }
+}
