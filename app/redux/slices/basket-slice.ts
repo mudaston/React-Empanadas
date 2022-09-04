@@ -106,6 +106,33 @@ export const basketSlice = createSlice({
         )
       )
     },
+    incrementEmpanadaByID(state, action: PayloadAction<number>) {
+      let basketEmpanada = state.entities.empanadas.basketItems.find(
+        (empanada) => empanada.id === action.payload
+      )
+
+      if (!basketEmpanada) return
+
+      basketEmpanada.amount++
+    },
+    decrementEmpanadaByID(state, action: PayloadAction<number>) {
+      let basketEmpanada = state.entities.empanadas.basketItems.find(
+        (empanada) => empanada.id === action.payload
+      )
+
+      if (!basketEmpanada) return
+
+      basketEmpanada.amount--
+
+      if (!basketEmpanada.amount) {
+        state.entities.empanadas.basketItems = state.entities.empanadas.basketItems.filter(
+          ({ id }) => id !== basketEmpanada?.id
+        )
+        state.entities.empanadas.orderItems = state.entities.empanadas.orderItems.filter(
+          ({ id }) => id !== basketEmpanada?.id
+        )
+      }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(HYDRATE, (state, action) => {
@@ -145,4 +172,10 @@ export const basketSlice = createSlice({
   },
 })
 
-export const { addEmpanada, emptyBasket, deleteEmpanadaByID } = basketSlice.actions
+export const {
+  addEmpanada,
+  emptyBasket,
+  deleteEmpanadaByID,
+  incrementEmpanadaByID,
+  decrementEmpanadaByID,
+} = basketSlice.actions
