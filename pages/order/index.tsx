@@ -57,14 +57,14 @@ const View: FC = () => {
           <Button.LabelRegular>{t('basket:empty_basket')}</Button.LabelRegular>
         </Button>
       </header>
-      <main className={style['basket__order-list']}>
+      <div className={style['basket__order-list']}>
         <div className={style['basket__order-list-item']}>
           <EmpanadasOrderList />
           <div className={style['basket__order-list-item-info']}>
             <OrderInfo />
           </div>
         </div>
-      </main>
+      </div>
       <footer className={style['basket__footer']}>
         <Button type={'get-back-button-with-icon'} onClick={() => router.push(routerPaths.home)}>
           <Button.Icon fontSize={'12px'}>
