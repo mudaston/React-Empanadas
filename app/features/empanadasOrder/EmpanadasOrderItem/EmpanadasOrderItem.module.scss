@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    flex: 2;
   }
 
   // .empanada-order-item__image
@@ -21,6 +22,10 @@
 
     width: 60px;
     height: 60px;
+
+    img {
+      object-fit: contain;
+    }
   }
 
   // .empanada-order-item__title
@@ -32,6 +37,7 @@
   &__main {
     display: flex;
     gap: 12px;
+    flex: 1;
     align-items: center;
   }
 
@@ -45,7 +51,9 @@
   &__footer {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 100px;
+    flex: 1;
   }
 
   // .empanada-order-item__sum
