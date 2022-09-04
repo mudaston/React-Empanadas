@@ -12,6 +12,9 @@ const nextConfig = {
     API_URL: 'http://127.0.0.1:3000/api',
     CURRENT_LOCALE: i18n.defaultLocale,
   },
+  experimental: {
+    nftTracing: true,
+  },
 }
 
 module.exports = nextConfig
