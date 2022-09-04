@@ -12,6 +12,14 @@ const nextConfig = {
     API_URL: 'http://127.0.0.1:3000/api',
     CURRENT_LOCALE: i18n.defaultLocale,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://v6.exchangerate-api.com/:path*',
+      },
+    ]
+  },
   experimental: {
     nftTracing: true,
   },
