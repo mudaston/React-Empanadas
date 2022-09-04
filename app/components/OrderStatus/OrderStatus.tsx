@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next'
 import ReactTooltip from 'react-tooltip'
 
 import { basketItemsAmount, basketOrderSum } from '../../redux/selectors/basket'
-// import { useExchangeCurrency } from '../../hooks/useExchangeCurrency'
+import { useExchangeCurrency } from '../../hooks/useExchangeCurrency'
 import { routerPaths } from '../../helpers/router-paths'
 
 import style from './OrderStatus.module.scss'
@@ -20,7 +20,7 @@ const OrderStatus: FC<Props> = (props) => {
   const [showToolTip, setShowToolTip] = useState(false)
   const itemsAmount = useSelector(basketItemsAmount)
   const orderSum = useSelector(basketOrderSum)
-  // const { exchangeCurrency } = useExchangeCurrency()
+  const { exchangeCurrency } = useExchangeCurrency()
 
   useEffect(() => {
     setShowToolTip(true)
@@ -38,7 +38,7 @@ const OrderStatus: FC<Props> = (props) => {
           data-tip={t('order-status:order_price')}
           data-for='order-sum'
         >
-          {orderSum} {t('currencies:currency')}
+          {exchangeCurrency(orderSum)} {t('currencies:currency')}
         </span>
         <div className={style['order-status__divider']} />
         <div

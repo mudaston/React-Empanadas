@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import { useTranslation } from 'next-i18next'
 
 import { routerPaths } from '../../helpers/router-paths'
 
@@ -15,22 +16,20 @@ type Props = OwnProps
 
 const BasketIsEmpty: FC<Props> = () => {
   const router = useRouter()
+  const { t } = useTranslation(['common', 'basket'])
 
   return (
     <article className={style['basket-empty']}>
       <header className={style['basket-empty__header']}>
-        <span className={style['basket-empty__title']}>Корзина пустая 😕</span>
-        <p className={style['basket-empty__subtitle']}>
-          Вероятней всего, вы не заказывали ещё пиццу. Для того, чтобы заказать пиццу, перейди на
-          главную страницу.
-        </p>
+        <span className={style['basket-empty__title']}>{t('basket:cart_is_empty')} 😕</span>
+        <p className={style['basket-empty__subtitle']}>{t('basket:order_now')}</p>
       </header>
       <main className={style['basket-empty__image']}>
         {<Image src={image} alt={''} width={430} height={366} />}
       </main>
       <footer className={style['basket-empty__footer']}>
         <Button type={'get-back-button'} onClick={() => router.push(routerPaths.home)}>
-          <Button.LabelBold>Вернуться назад</Button.LabelBold>
+          <Button.LabelBold>{t('common:come_back')}</Button.LabelBold>
         </Button>
       </footer>
     </article>

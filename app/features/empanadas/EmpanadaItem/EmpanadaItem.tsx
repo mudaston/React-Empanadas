@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next'
 
 import { empanadaAmountByID } from '../../../redux/selectors/basket'
 import { addEmpanada } from '../../../redux/slices/basket-slice'
+import { useExchangeCurrency } from '../../../hooks/useExchangeCurrency'
 
 import { Button } from '../../../components/controls'
 
@@ -22,6 +23,7 @@ type Props = OwnProps
 const EmpanadaItem: FC<Props> = ({ id, name, price, image }) => {
   const { t } = useTranslation(['currencies', 'home'])
   const empanadaAmount = useSelector(empanadaAmountByID(id))
+  const { exchangeCurrency } = useExchangeCurrency()
   const dispatch = useDispatch()
 
   const addEmpanadaClickHandler = () => {
@@ -42,7 +44,7 @@ const EmpanadaItem: FC<Props> = ({ id, name, price, image }) => {
         <span className={style['empanada-item__name']}>{name}</span>
         <footer className={style['empanada-item__info']}>
           <span className={style['empanada-item__price']}>
-            от {price} {t('currencies:currency')}
+            от {exchangeCurrency(price)} {t('currencies:currency')}
           </span>
           <Button type={'add-item-button'} onClick={addEmpanadaClickHandler}>
             <Button.Icon fontSize='12px'>
