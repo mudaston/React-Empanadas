@@ -2,6 +2,8 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import { useTranslation } from 'next-i18next'
 
+import HeaderContextProvider from '../app/context/HeaderContext'
+
 import { Header } from '../app/components'
 
 interface OwnProps {
@@ -24,7 +26,9 @@ const Layout: NextPage<Props> = ({ children }) => {
         <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
         <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
       </Head>
-      <Header />
+      <HeaderContextProvider>
+        <Header />
+      </HeaderContextProvider>
       <main style={{ flex: '1 1 auto' }}>{children}</main>
       <footer>awdawd</footer>
     </>

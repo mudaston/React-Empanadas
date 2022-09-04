@@ -10,6 +10,7 @@ import { routerPaths } from '../../helpers/router-paths'
 
 import style from './OrderStatus.module.scss'
 import colors from '../../../styles/colors.module.scss'
+import { useToggleHeaderVisibilityContext } from '../../context/HeaderContext'
 
 interface OwnProps {}
 
@@ -21,6 +22,7 @@ const OrderStatus: FC<Props> = (props) => {
   const itemsAmount = useSelector(basketItemsAmount)
   const orderSum = useSelector(basketOrderSum)
   const { exchangeCurrency } = useExchangeCurrency()
+  const toggleHeaderVisibility = useToggleHeaderVisibilityContext()
 
   useEffect(() => {
     setShowToolTip(true)
@@ -32,7 +34,7 @@ const OrderStatus: FC<Props> = (props) => {
 
   return (
     <Link href={routerPaths.order} scroll={false}>
-      <a className={style['order-status']}>
+      <a className={style['order-status']} onClick={() => toggleHeaderVisibility()}>
         <span
           className={style['order-status__sum']}
           data-tip={t('order-status:order_price')}

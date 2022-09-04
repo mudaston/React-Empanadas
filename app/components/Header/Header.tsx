@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect } from 'react'
 import { useTranslation } from 'next-i18next'
 import classNames from 'classnames'
 import Image from 'next/image'
@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 
 import { routerPaths } from '../../helpers/router-paths'
 import { LanguageSwitcher, OrderStatus } from '../index'
+import { useHeaderContext, useToggleHeaderVisibilityContext } from '../../context/HeaderContext'
 
 import style from './Header.module.scss'
 
@@ -19,7 +20,8 @@ type Props = OwnProps
 const Header: FC<Props> = () => {
   const { t } = useTranslation(['header', 'basket-header', 'currencies'])
   const { route } = useRouter()
-  const [mobileMenuActive, setMobileMenuActive] = useState(false)
+  const mobileMenuActive = useHeaderContext()
+  const setMobileMenuActive = useToggleHeaderVisibilityContext()
 
   useEffect(() => {
     if (mobileMenuActive) document.body.style.overflow = 'hidden'
@@ -27,7 +29,7 @@ const Header: FC<Props> = () => {
   }, [mobileMenuActive])
 
   const handleChangeMenuVisible = () => {
-    setMobileMenuActive((prevState) => !prevState)
+    setMobileMenuActive()
   }
 
   const ShowOrderStatus = route !== routerPaths.order && <OrderStatus />
