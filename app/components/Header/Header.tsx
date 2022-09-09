@@ -20,17 +20,13 @@ type Props = OwnProps
 const Header: FC<Props> = () => {
   const { t } = useTranslation(['header', 'basket-header', 'currencies'])
   const { route } = useRouter()
-  const mobileMenuActive = useHeaderContext()
-  const setMobileMenuActive = useToggleHeaderVisibilityContext()
+  const isMobileMenuActive = useHeaderContext()
+  const { setHeaderVisible, setHeaderHidden } = useToggleHeaderVisibilityContext()
 
   useEffect(() => {
-    if (mobileMenuActive) document.body.style.overflow = 'hidden'
+    if (isMobileMenuActive) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = ''
-  }, [mobileMenuActive])
-
-  const handleChangeMenuVisible = () => {
-    setMobileMenuActive()
-  }
+  }, [isMobileMenuActive])
 
   const ShowOrderStatus = route !== routerPaths.order && <OrderStatus />
   const subtitle =
@@ -48,9 +44,9 @@ const Header: FC<Props> = () => {
         </div>
         <div
           className={classNames(style['header-mobile__burger'], {
-            [style['header-mobile__burger_active']]: mobileMenuActive,
+            [style['header-mobile__burger_active']]: isMobileMenuActive,
           })}
-          onClick={handleChangeMenuVisible}
+          onClick={() => (isMobileMenuActive ? setHeaderHidden() : setHeaderVisible())}
         >
           <span
             className={`${style['header-mobile__burger-line']} ${style['header-mobile__burger-line_first']}`}
@@ -65,7 +61,7 @@ const Header: FC<Props> = () => {
       </div>
       <div
         className={classNames('container', style['header__wrapper'], {
-          [style['header__wrapper_active']]: mobileMenuActive,
+          [style['header__wrapper_active']]: isMobileMenuActive,
         })}
       >
         <div className={style['header__left-side']}>

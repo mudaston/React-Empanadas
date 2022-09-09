@@ -7,7 +7,10 @@ interface OwnProps {
 type Props = OwnProps
 
 const HeaderContext = createContext(false)
-const HeaderUpdateContext = createContext(() => {})
+const HeaderUpdateContext = createContext({
+  setHeaderHidden: () => {},
+  setHeaderVisible: () => {},
+})
 
 export const useHeaderContext = () => useContext(HeaderContext)
 export const useToggleHeaderVisibilityContext = () => useContext(HeaderUpdateContext)
@@ -15,15 +18,18 @@ export const useToggleHeaderVisibilityContext = () => useContext(HeaderUpdateCon
 const HeaderContextProvider: FC<Props> = ({ children }) => {
   const [showHeader, setShowHeader] = useState(false)
 
-  const toggleHeaderVisibility = () => {
-    setShowHeader((prevState) => !prevState)
+  const functions = {
+    setHeaderHidden: () => {
+      setShowHeader(false)
+    },
+    setHeaderVisible: () => {
+      setShowHeader(true)
+    },
   }
 
   return (
     <HeaderContext.Provider value={showHeader}>
-      <HeaderUpdateContext.Provider value={toggleHeaderVisibility}>
-        {children}
-      </HeaderUpdateContext.Provider>
+      <HeaderUpdateContext.Provider value={functions}>{children}</HeaderUpdateContext.Provider>
     </HeaderContext.Provider>
   )
 }
