@@ -30,7 +30,7 @@ const Layout: NextPage<Props> = ({ children }) => {
         <Header />
       </HeaderContextProvider>
       <main style={{ flex: '1 1 auto' }}>{children}</main>
-      <footer>awdawd</footer>
+      <footer style={{ marginTop: '100px' }} />
     </>
   )
 }
