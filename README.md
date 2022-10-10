@@ -39,7 +39,7 @@
 </a>
 
 <a href="https://webpack.js.org/" target="_blank">
-<img src="https://img.shields.io/badge/Webpack-5.73.0-8DD6F9?style=for-the-badge&logo=Webpack">
+<img src="https://img.shields.io/badge/Webpack-5.74.0-8DD6F9?style=for-the-badge&logo=Webpack">
 </a>
 
 </div>
@@ -51,7 +51,7 @@
 
 </p>
 
-This site is like a portfolio.
+This site is like a shop.
 
 <br/>
 
@@ -129,15 +129,4 @@ Open in a browser
 
 ## Lessons Learned
 
-How to switch site theme and move html blocks into separate files.
-
-Splitting html into different folders is very handy because all you need to do is include an html block and import scss styles into the section.
-
-You can create style and media query files in the same layout folder without having to search for them.
-
-<br/>
-
-## Additional
-
-it would have been much better if I had known the [gulp-file-include](https://www.npmjs.com/package/gulp-file-include) library earlier
-
+I learned a little about typescript, how to work with the redux toolkit, implement multilingualism on a site with the i18next library, and most importantly, I learned how to work with next js and compile pages before sending them to users. Thus, the server compiles all the page code, and the user only needs to get it.
