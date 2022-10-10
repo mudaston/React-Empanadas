@@ -51,7 +51,7 @@
 
 </p>
 
-This site is like a shop.
+This site is an online store for ordering food. Created with next js and redux tools and also has multilingual that created with i18next library.
 
 <br/>
 
