@@ -2,8 +2,32 @@
 
 <div align="left">
 
+<a href="https://www.typescriptlang.org" target="_blank">
+<img src="https://img.shields.io/badge/TypeScript-4.7.4-3178C6?style=for-the-badge&logo=TypeScript">
+</a>
+     
 <a href="https://reactjs.org" target="_blank">
 <img src="https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=React">
+</a>
+     
+<a href="https://nextjs.org" target="_blank">
+<img src="https://img.shields.io/badge/Next Js-12.2.4-000?style=for-the-badge&logo=Next.js">
+</a>
+     
+<a href="https://redux-toolkit.js.org" target="_blank">
+<img src="https://img.shields.io/badge/Redux Toolkit-1.8.3-764ABC?style=for-the-badge&logo=Redux">
+</a>
+     
+<a href="https://github.com/kirill-konshin/next-redux-wrapper" target="_blank">
+<img src="https://img.shields.io/badge/next redux wrapper-7.0.5-764ABC?style=for-the-badge&logo=Redux">
+</a>
+     
+<a href="https://github.com/typicode/json-server" target="_blank">
+<img src="https://img.shields.io/badge/json server-0.17.0-F7B93E?style=for-the-badge&logo=JSON">
+</a>
+     
+<a href="https://www.i18next.com" target="_blank">
+<img src="https://img.shields.io/badge/i18next-11.3.0-26A69A?style=for-the-badge&logo=i18next">
 </a>
 
 <a href="https://styled-components.com/" target="_blank">
