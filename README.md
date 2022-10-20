@@ -30,8 +30,8 @@
 <img src="https://img.shields.io/badge/i18next-11.3.0-26A69A?style=for-the-badge&logo=i18next">
 </a>
 
-<a href="https://styled-components.com/" target="_blank">
-<img src="https://img.shields.io/badge/Styled%20Components-DB7093?style=for-the-badge&logo=styled-components">
+<a href="https://sass-lang.com/" target="_blank">
+<img src="https://img.shields.io/badge/sass(scss)--CC6699?style=for-the-badge&logo=Sass">
 </a>
 
 <a href="https://prettier.io/" target="_blank">
