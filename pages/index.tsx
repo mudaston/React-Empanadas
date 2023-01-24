@@ -57,10 +57,14 @@ export const getServerSideProps: GetServerSideProps = wrapper.getServerSideProps
     store.dispatch(getEmpanadas.initiate({ locale: locale as string }))
     store.dispatch(getExchangeRate.initiate())
 
-    await Promise.all(categoriesOperations())
-    await Promise.all(filtersOperations())
-    await Promise.all(empanadasOperations())
-    await Promise.all(exchangeOperations())
+    await Promise.all(
+      [
+        categoriesOperations(),
+        filtersOperations(),
+        empanadasOperations(),
+        exchangeOperations(),
+      ].flat()
+    )
 
     return {
       props: {
