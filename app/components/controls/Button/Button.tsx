@@ -12,7 +12,6 @@ type ButtonTypes =
   | 'none'
   | 'choose-filter-button'
   | 'add-item-button'
-  | 'empty-basket-button'
   | 'get-back-button-with-icon'
   | 'get-back-button'
   | 'pay-now-button'
