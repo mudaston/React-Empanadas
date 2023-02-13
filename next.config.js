@@ -12,7 +12,7 @@ const nextConfig = {
     API_URL:
       process.env.NODE_ENV !== 'production'
         ? 'http://localhost:3000/api'
-        : 'https://main--stalwart-malasada-ebd528.netlify.app/',
+        : 'https://main--stalwart-malasada-ebd528.netlify.app/api',
     CURRENT_LOCALE: i18n.defaultLocale,
   },
 }
