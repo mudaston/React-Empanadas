@@ -12,7 +12,7 @@ const nextConfig = {
     API_URL:
       process.env.NODE_ENV !== 'production'
         ? 'http://127.0.0.1:3000/api'
-        : 'https://react-empanadas.vercel.app/api',
+        : 'https://react-empanadas-production.up.railway.app/api',
     CURRENT_LOCALE: i18n.defaultLocale,
   },
 }
