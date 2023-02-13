@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import type { GetServerSideProps, NextPage } from 'next'
 import { useTranslation } from 'next-i18next'
 
