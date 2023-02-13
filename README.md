@@ -83,6 +83,22 @@ This site is an online store for ordering food. Created with next js and redux t
 />
 </p>
 
+## Lighthouse
+
+### Summary
+
+<p align="left">
+<img src="https://user-images.githubusercontent.com/64277973/218544922-bc175556-1fb2-4481-9d6b-d1137bbff95e.png"
+     width="400"
+/>
+</p>
+
+### PDF file with all info
+
+<a href="https://github.com/mudaston/React-Empanadas/files/10725218/lighthouse.pdf" target="_blank">
+     Download
+</a>
+
 ## System Requirements
 
 - [git](https://git-scm.com/)
