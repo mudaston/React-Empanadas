@@ -15,6 +15,7 @@ const nextConfig = {
         : 'http://127.0.0.1:3000/api',
     CURRENT_LOCALE: i18n.defaultLocale,
   },
+  output: 'standalone',
 }
 
 module.exports = nextConfig
