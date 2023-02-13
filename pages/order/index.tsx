@@ -75,9 +75,6 @@ const View: FC = () => {
         <Button type={'pay-now-button'}>
           <Button.LabelBold>{translate('basket:pay_now')}</Button.LabelBold>
         </Button>
-        <Button type={'get-back-button-with-icon'} onClick={() => router.push(routerPaths.home)}>
-          <Button.LabelRegular>{translate('common:come_back')}</Button.LabelRegular>
-        </Button>
       </footer>
     </>
   ) : (
