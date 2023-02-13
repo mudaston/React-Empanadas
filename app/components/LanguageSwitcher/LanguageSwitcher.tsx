@@ -26,10 +26,17 @@ const LanguageSwitcher: FC<Props> = () => {
     setActive((prevState) => !prevState)
   }
 
-  const availableLocales = useMemo(
-    () => locales?.filter((lang) => lang !== locale).map((label, i) => ({ id: i, label })) ?? [],
-    [locale]
-  )
+  const available = (lang: string) => lang !== locale
+
+  const indexLocalesToDisplay = (label: string, i: number) => ({ id: i, label })
+
+  const availableLocales = useMemo(() => {
+    const filteredLocales = locales?.filter(available)
+
+    const indexedLocales = filteredLocales!.map(indexLocalesToDisplay)
+
+    return indexedLocales
+  }, [locale])
 
   return (
     <OutsideClickHandler onOutsideClick={handleOnShowStateChange} disabled={!active}>

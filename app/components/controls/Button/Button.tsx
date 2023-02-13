@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import cn from 'classnames'
 
 import LabelBold, { Props as LabelBoldProps } from './LabelBold/LabelBold'
@@ -7,16 +7,6 @@ import Icon, { Props as IconProps } from './Icon/Icon'
 import Counter, { Props as CounterProps } from './Counter/Counter'
 
 import style from '../../../../styles/buttons/Button.module.scss'
-
-type ButtonTypes =
-  | 'none'
-  | 'choose-filter-button'
-  | 'add-item-button'
-  | 'get-back-button-with-icon'
-  | 'get-back-button'
-  | 'pay-now-button'
-  | 'rounded-button-orange'
-  | 'rounded-button-grey'
 
 interface OwnProps {
   type?: ButtonTypes
@@ -27,13 +17,6 @@ interface OwnProps {
 }
 
 type Props = OwnProps
-
-type Subcomponents = {
-  LabelBold: FC<LabelBoldProps>
-  LabelRegular: FC<LabelRegularProps>
-  Icon: FC<IconProps>
-  Counter: FC<CounterProps>
-}
 
 const Button: FC<Props> & Subcomponents = ({ children, onClick, isActive, type, ariaLabel }) => {
   return (

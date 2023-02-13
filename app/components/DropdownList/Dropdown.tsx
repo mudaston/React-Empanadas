@@ -5,7 +5,7 @@ import style from './Dropdown.module.scss'
 
 type alignTypes = 'left' | 'right' | 'center'
 type textTransformTypes = 'uppercase' | 'lowercase'
-type hoverEffect = true | false
+type hoverEffect = boolean
 
 interface DropDownItem {
   id: number
@@ -37,7 +37,7 @@ const Dropdown: FC<Props> = ({
 }) => {
   const [currentActiveItem, setCurrentActiveItem] = useState(activeItem)
 
-  const HandleOnItemClick = (id: number, label: string) => {
+  const HandleOnItemClick = (id: number, label: string): void => {
     if (label === currentActiveItem) return
 
     callback(id, label)

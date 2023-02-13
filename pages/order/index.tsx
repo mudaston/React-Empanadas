@@ -39,7 +39,7 @@ const View: FC = () => {
   const router = useRouter()
   const dispatch = useDispatch()
   const empanadasBasket = useSelector(empanadasBasketItems)
-  const { t } = useTranslation(['basket', 'common'])
+  const [translate] = useTranslation(['basket', 'common'])
 
   return empanadasBasket.length ? (
     <>
@@ -48,13 +48,13 @@ const View: FC = () => {
           <div className={style['basket__icon']}>
             <span className='icon-shopping-cart' />
           </div>
-          <h2 className={style['basket__title']}>{t('basket:basket')}</h2>
+          <h2 className={style['basket__title']}>{translate('basket:basket')}</h2>
         </div>
         <Button type={'empty-basket-button'} onClick={() => dispatch(emptyBasket())}>
           <Button.Icon fontSize={'18px'}>
             <span className='icon-trash' />
           </Button.Icon>
-          <Button.LabelRegular>{t('basket:empty_basket')}</Button.LabelRegular>
+          <Button.LabelRegular>{translate('basket:empty_basket')}</Button.LabelRegular>
         </Button>
       </header>
       <div className={style['basket__order-list']}>
@@ -70,10 +70,13 @@ const View: FC = () => {
           <Button.Icon fontSize={'12px'}>
             <span className='icon-chevron-left-solid' />
           </Button.Icon>
-          <Button.LabelRegular>{t('common:come_back')}</Button.LabelRegular>
+          <Button.LabelRegular>{translate('common:come_back')}</Button.LabelRegular>
         </Button>
         <Button type={'pay-now-button'}>
-          <Button.LabelBold>{t('basket:pay_now')}</Button.LabelBold>
+          <Button.LabelBold>{translate('basket:pay_now')}</Button.LabelBold>
+        </Button>
+        <Button type={'get-back-button-with-icon'} onClick={() => router.push(routerPaths.home)}>
+          <Button.LabelRegular>{translate('common:come_back')}</Button.LabelRegular>
         </Button>
       </footer>
     </>

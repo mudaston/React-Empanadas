@@ -31,6 +31,18 @@ const EmpanadasOrderItem: FC<Props> = ({ id, name, image }) => {
   const cost = useAppSelector(empanadaCostByID(id))
   const { exchangeCurrency } = useExchangeCurrency()
 
+  const incrementClickHandler = () => {
+    dispatch(incrementEmpanadaByID(id))
+  }
+
+  const decrementClickHandler = () => {
+    dispatch(decrementEmpanadaByID(id))
+  }
+
+  const deleteClickHandler = (id: number) => {
+    dispatch(deleteEmpanadaByID(id))
+  }
+
   return (
     <article className={style['empanada-order-item']}>
       <div className={style['empanada-order-item__wrapper']}>
@@ -44,7 +56,7 @@ const EmpanadasOrderItem: FC<Props> = ({ id, name, image }) => {
           <Button
             ariaLabel={'increment item'}
             type={'rounded-button-orange'}
-            onClick={() => dispatch(decrementEmpanadaByID(id))}
+            onClick={decrementClickHandler}
           >
             <Button.Icon type={'weightless'} fontSize={'2px'}>
               <span className='icon-minus-icon' />
@@ -54,7 +66,7 @@ const EmpanadasOrderItem: FC<Props> = ({ id, name, image }) => {
           <Button
             ariaLabel={'decrement item'}
             type={'rounded-button-orange'}
-            onClick={() => dispatch(incrementEmpanadaByID(id))}
+            onClick={incrementClickHandler}
           >
             <Button.Icon type={'weightless'} fontSize={'11px'}>
               <span className='icon-plus-icon' />
@@ -69,7 +81,7 @@ const EmpanadasOrderItem: FC<Props> = ({ id, name, image }) => {
         <Button
           ariaLabel={'delete item'}
           type={'rounded-button-grey'}
-          onClick={() => dispatch(deleteEmpanadaByID(id))}
+          onClick={() => deleteClickHandler(id)}
         >
           <Button.Icon type={'weightless'} transform={'rotate(45deg)'} fontSize={'11px'}>
             <span className='icon-plus-icon' />
