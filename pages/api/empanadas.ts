@@ -11,22 +11,21 @@ export default async function handler(
     query: { locale },
   } = req
 
-  axiosWorker
-    .get(`${locale}`, {
+  try {
+    const { data } = await axiosWorker.get(`${locale}`, {
       params: {
         name: 'empanadas',
       },
     })
-    .then(({ data }) => {
-      res.status(200).json({
-        data: data[0].empanadas,
-        error: '',
-      })
+
+    res.status(200).json({
+      data: data[0].empanadas,
+      error: '',
     })
-    .catch((error) => {
-      res.status(500).json({
-        data: [],
-        error: error,
-      })
+  } catch (error) {
+    res.status(404).json({
+      data: [],
+      error: String(error),
     })
+  }
 }
