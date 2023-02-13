@@ -57,7 +57,7 @@ This site is an online store for ordering food. Created with next js and redux t
 
 ## Demo
 
-[react-empanadas.herokuapp.com](https://react-empanadas.herokuapp.com/)
+[https://react-empanadas-production.up.railway.app](https://react-empanadas-production.up.railway.app)
 
 <br/>
 
