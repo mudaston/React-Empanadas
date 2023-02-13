@@ -12,7 +12,7 @@ const nextConfig = {
     API_URL:
       process.env.NODE_ENV !== 'production'
         ? 'http://localhost:3000/api'
-        : 'http://localhost:3000/api',
+        : 'http://127.0.0.1:3000/api',
     CURRENT_LOCALE: i18n.defaultLocale,
   },
 }
